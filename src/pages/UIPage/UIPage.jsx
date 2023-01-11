@@ -3,6 +3,9 @@ import React from 'react';
 import styles from './styles.module.scss';
 
 import Button from '../../components/Button/Button';
+import { ReactComponent as GoogleSVG } from '../../assets/images/google.svg';
+import { ReactComponent as FacebookSVG } from '../../assets/images/facebook.svg';
+import { ReactComponent as YandexSVG } from '../../assets/images/yandex.svg';
 
 const UIPage = () => {
   return (
@@ -22,6 +25,20 @@ const UIPage = () => {
 
         <Button color="secondary" size="small">
           Читать в источнике
+        </Button>
+      </div>
+
+      <div className={styles.row}>
+        <Button size="social">
+          <GoogleSVG />
+        </Button>
+
+        <Button size="social">
+          <FacebookSVG />
+        </Button>
+
+        <Button size="social">
+          <YandexSVG />
         </Button>
       </div>
     </>

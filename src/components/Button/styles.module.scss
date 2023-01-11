@@ -38,6 +38,19 @@
     letter-spacing: 0.02em;
   }
 
+  &_social {
+    width: 100%;
+    max-width: 9.6rem;
+    padding: 0.6rem 1.6rem;
+    background-color: v.$white;
+    border: 0.1rem solid rgba(89, 112, 255, 0.51);
+    border-radius: 0.3rem;
+
+    & > svg {
+      height: 1.7rem;
+    }
+  }
+
   &_primary {
     color: v.$primary-btn-text-color;
     background-color: v.$primary-btn-bg-color;
