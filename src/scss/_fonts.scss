@@ -1,0 +1,21 @@
+/* inter-regular - latin_cyrillic */
+@font-face {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 400;
+  src: local(''),
+    url('../fonts/inter-v12-latin_cyrillic-regular.woff2') format('woff2'),
+    url('../fonts/inter-v12-latin_cyrillic-regular.woff') format('woff');
+  font-display: swap;
+}
+
+/* inter-500 - latin_cyrillic */
+@font-face {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 500;
+  src: local(''),
+    url('../fonts/inter-v12-latin_cyrillic-500.woff2') format('woff2'),
+    url('../fonts/inter-v12-latin_cyrillic-500.woff') format('woff');
+  font-display: swap;
+}
