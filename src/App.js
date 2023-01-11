@@ -1,7 +1,9 @@
 import React from 'react';
 
+import UIPage from './pages/UIPage/UIPage';
+
 const App = () => {
-  return <div>СКАН</div>;
+  return <UIPage />;
 };
 
 export default App;
