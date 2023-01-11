@@ -4,6 +4,7 @@ import styles from './styles.module.scss';
 
 import Button from '../../components/Button/Button';
 import TariffList from '../../components/TariffList/TariffList';
+import TariffCard from '../../components/TariffCard/TariffCard';
 import { ReactComponent as GoogleSVG } from '../../assets/images/google.svg';
 import { ReactComponent as FacebookSVG } from '../../assets/images/facebook.svg';
 import { ReactComponent as YandexSVG } from '../../assets/images/yandex.svg';
