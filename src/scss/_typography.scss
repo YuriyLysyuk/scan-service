@@ -1,0 +1,83 @@
+@use './variables' as v;
+@use './placeholders';
+
+// Typography
+html,
+body {
+  font-family: v.$body-font;
+  font-weight: v.$body-font-weight;
+}
+
+html {
+  font-size: v.$basic-font-size;
+}
+
+body {
+  color: v.$text-color;
+  font-size: v.$paragraph;
+  line-height: v.$line-height;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeSpeed;
+}
+
+h1,
+h2,
+h3 {
+  font-family: v.$header-font;
+  font-weight: bold;
+}
+
+html,
+button,
+input,
+select,
+textarea {
+  color: v.$text-color;
+}
+
+a {
+  color: v.$text-color;
+  text-decoration: none;
+
+  @extend %transition;
+
+  &:visited {
+    color: v.$text-color;
+    text-decoration: none;
+    outline: 0;
+  }
+
+  &:focus,
+  &:active,
+  &:hover {
+    color: v.$text-color;
+    text-decoration: underline;
+    outline: 0;
+  }
+}
+
+i,
+em {
+  font-style: italic;
+}
+
+b,
+strong {
+  font-weight: bold;
+}
+
+input {
+  &:focus {
+    outline: none;
+  }
+}
+
+[disabled] {
+  pointer-events: none;
+  opacity: 0.5;
+}
+
+.br {
+  display: block;
+}
