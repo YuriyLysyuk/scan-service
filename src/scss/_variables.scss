@@ -1,0 +1,39 @@
+// Fonts
+$font-family: 'Inter', sans-serif;
+$font-family-title: Arial, Helvetica, sans-serif;
+
+$body-font: $font-family;
+$body-font-weight: 400;
+
+$header-font: $font-family-title;
+
+// For REM / EM
+$basic-font-size: 62.5%;
+$paragraph: 1.6rem;
+$line-height: 2.4rem;
+
+// Basic colors
+$blue: #00f;
+$red: #f00;
+$white: #fff;
+$black: #000;
+$gray: #d2d2d2;
+
+// Palette
+$primary: #5970ff;
+$secondary: #7ce3e1;
+$accent: #ffb64f;
+$accent-2: #029491;
+$light: $white;
+$dark: $black;
+
+// Mixing colors
+$text-color: $dark;
+$inverted-text-color: $light;
+
+$default-btn-color: $gray;
+$primary-btn-color: $primary;
+$secondary-btn-color: $secondary;
+
+// Blocks
+$bd-radius: 0.5rem;
