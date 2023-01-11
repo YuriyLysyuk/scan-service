@@ -58,12 +58,6 @@ const UIPage = () => {
             fugit, voluptatem iste quis rerum est odit odio pariatur. Voluptate,
             esse consequatur.
           </p>
-          <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Animi
-            quidem nobis error distinctio ipsa sit praesentium expedita itaque
-            fugit, voluptatem iste quis rerum est odit odio pariatur. Voluptate,
-            esse consequatur.
-          </p>
           <h3>Заголовок 3</h3>
           <p>
             Lorem ipsum dolor sit amet consectetur adipisicing elit. Animi
