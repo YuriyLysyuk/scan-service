@@ -3,6 +3,7 @@ import React from 'react';
 import styles from './styles.module.scss';
 
 import Button from '../../components/Button/Button';
+import TariffList from '../../components/TariffList/TariffList';
 import { ReactComponent as GoogleSVG } from '../../assets/images/google.svg';
 import { ReactComponent as FacebookSVG } from '../../assets/images/facebook.svg';
 import { ReactComponent as YandexSVG } from '../../assets/images/yandex.svg';
@@ -66,6 +67,10 @@ const UIPage = () => {
             esse consequatur.
           </p>
         </div>
+      </div>
+
+      <div className={styles.row}>
+        <TariffList />
       </div>
     </>
   );
