@@ -1,5 +1,6 @@
 @use './variables' as v;
 @use './placeholders';
+@use './include-media.scss' as *;
 
 // Typography
 html,
@@ -23,9 +24,44 @@ body {
 
 h1,
 h2,
-h3 {
+.h2 {
   font-family: v.$header-font;
-  font-weight: bold;
+  font-weight: v.$header-font-weight;
+  font-size: 2.8rem;
+  line-height: 3.4rem;
+  letter-spacing: 0.01em;
+}
+
+h1 {
+  @include media('>=md') {
+    font-size: 6rem;
+    line-height: 7.2rem;
+  }
+}
+
+h2,
+.h2 {
+  @include media('>=md') {
+    font-size: 4.5rem;
+    line-height: 5.4rem;
+  }
+}
+
+h3 {
+  font-family: v.$body-font;
+  font-size: 1.9rem;
+  line-height: 2.3rem;
+  letter-spacing: 0.02em;
+  font-weight: 500;
+
+  @include media('>=md') {
+    font-size: 2.6rem;
+    line-height: 3.1rem;
+  }
+}
+
+p {
+  margin-bottom: v.$paragraph;
 }
 
 html,
