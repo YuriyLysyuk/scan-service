@@ -31,9 +31,12 @@ $dark: $black;
 $text-color: $dark;
 $inverted-text-color: $light;
 
-$default-btn-color: $gray;
-$primary-btn-color: $primary;
-$secondary-btn-color: $secondary;
+$default-btn-text-color: $text-color;
+$default-btn-bg-color: $gray;
+$primary-btn-text-color: $inverted-text-color;
+$primary-btn-bg-color: $primary;
+$secondary-btn-text-color: $text-color;
+$secondary-btn-bg-color: $secondary;
 
 // Blocks
 $bd-radius: 0.5rem;
