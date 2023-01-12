@@ -11,7 +11,7 @@ const TariffList = () => {
     Boolean(TARIFFS) && (
       <div className={styles.list}>
         {TARIFFS.map((tariff) => (
-          <TariffCard tariff={tariff} />
+          <TariffCard key={tariff.id} tariff={tariff} />
         ))}
       </div>
     )
