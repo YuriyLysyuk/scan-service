@@ -25,57 +25,55 @@
   &:hover {
     opacity: 0.8;
   }
+}
 
-  &_small {
-    padding-top: 1.4rem;
-    padding-bottom: 1.4rem;
-    font-size: 1.4rem;
-    line-height: 1.7rem;
-    letter-spacing: 0.02em;
-    font-weight: 400;
+.small {
+  padding-top: 1.4rem;
+  padding-bottom: 1.4rem;
+  font-size: 1.4rem;
+  line-height: 1.7rem;
+  font-weight: 400;
 
-    @include media('>=xs') {
-      width: auto;
-      font-size: 1.6rem;
-      line-height: 1.9rem;
-    }
+  @include media('>=xs') {
+    width: auto;
+    font-size: 1.6rem;
+    line-height: 1.9rem;
   }
+}
 
-  &_big {
-    padding-top: 1.8rem;
-    padding-bottom: 1.8rem;
-    font-size: 2rem;
-    line-height: 2.4rem;
-    letter-spacing: 0.02em;
-    font-weight: 500;
+.big {
+  padding-top: 1.8rem;
+  padding-bottom: 1.8rem;
+  font-size: 2rem;
+  line-height: 2.4rem;
+  font-weight: 500;
 
-    @include media('>=xs') {
-      width: auto;
-      font-size: 2.2rem;
-      line-height: 2.7rem;
-    }
+  @include media('>=xs') {
+    width: auto;
+    font-size: 2.2rem;
+    line-height: 2.7rem;
   }
+}
 
-  &_social {
-    width: 100%;
-    max-width: 9.6rem;
-    padding: 0.6rem 1.6rem;
-    background-color: v.$white;
-    border: 0.1rem solid rgba(89, 112, 255, 0.51);
-    border-radius: 0.3rem;
+.social {
+  width: 100%;
+  max-width: 9.6rem;
+  padding: 0.6rem 1.6rem;
+  background-color: v.$white;
+  border: 0.1rem solid rgba(89, 112, 255, 0.51);
+  border-radius: 0.3rem;
 
-    & > svg {
-      height: 1.7rem;
-    }
+  & > svg {
+    height: 1.7rem;
   }
+}
 
-  &_primary {
-    color: v.$primary-btn-text-color;
-    background-color: v.$primary-btn-bg-color;
-  }
+.primary {
+  color: v.$primary-btn-text-color;
+  background-color: v.$primary-btn-bg-color;
+}
 
-  &_secondary {
-    color: v.$secondary-btn-text-color;
-    background-color: v.$secondary-btn-bg-color;
-  }
+.secondary {
+  color: v.$secondary-btn-text-color;
+  background-color: v.$secondary-btn-bg-color;
 }

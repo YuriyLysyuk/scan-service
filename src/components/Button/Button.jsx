@@ -8,8 +8,8 @@ const cx = classNames.bind(styles);
 const Button = ({ color, size, disabled, children }) => {
   const btnClass = cx({
     btn: true,
-    [`btn_${color}`]: color,
-    [`btn_${size}`]: size,
+    [`${color}`]: color,
+    [`${size}`]: size,
   });
 
   return (
