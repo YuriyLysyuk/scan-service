@@ -1,47 +1,70 @@
 import React from 'react';
+import classNames from 'classnames/bind';
 
 import styles from './styles.module.scss';
 
 import Button from '../Button/Button';
 
-const TariffCard = ({
-  tariff: { name, description, price, oldPrice, credit, includes },
-}) => {
-  return (
-    <div className={styles.card}>
-      <header className="header">
-        <div className="title">
-          {Boolean(name) && <h3>{name}</h3>}
+import { formatPrice } from '../../utils.js/helpers';
 
-          {Boolean(description) && <p>{description}</p>}
-        </div>
+const cx = classNames.bind(styles);
+
+const TariffCard = ({
+  tariff: {
+    id,
+    name,
+    description,
+    readMoreLink,
+    price,
+    oldPrice,
+    credit,
+    includes,
+  },
+}) => {
+  const isCurrent = 'beginner' === id;
+
+  const cardClass = cx({
+    card: true,
+    [`${id}`]: id,
+    current: isCurrent,
+  });
+
+  return (
+    <div className={cardClass}>
+      <header className={styles.header}>
+        {Boolean(name) && <h3>{name}</h3>}
+
+        {Boolean(description) && <p>{description}</p>}
       </header>
 
-      <div className="body">
-        <div className="price">
-          {Boolean(price) && <span>{price} ₽</span>}
+      <div className={styles.body}>
+        {Boolean(price) && (
+          <div className={styles.price}>
+            <span className={styles.new}>{formatPrice(price)}</span>
 
-          {Boolean(oldPrice) && <span className="old">{oldPrice} ₽</span>}
-        </div>
-
-        {Boolean(credit) && <price className="credit">{credit}</price>}
+            {Boolean(oldPrice) && (
+              <span className={styles.old}>{formatPrice(oldPrice)}</span>
+            )}
+            {Boolean(credit) && <p className={styles.credit}>{credit}</p>}
+          </div>
+        )}
 
         {Boolean(includes) && (
-          <div className="includes">
+          <div className={styles.includes}>
             <p>В тариф входит:</p>
 
             <ul>
               {includes.map((include) => (
-                <li>{include}</li>
+                <li key={include}>{include}</li>
               ))}
             </ul>
           </div>
         )}
-      </div>
 
-      <footer className="footer">
-        <Button color="primary">Подробнее</Button>
-      </footer>
+        <Button href={readMoreLink} color="primary">
+          Подробнее
+        </Button>
+      </div>
     </div>
   );
 };

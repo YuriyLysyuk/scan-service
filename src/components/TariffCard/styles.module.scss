@@ -1,5 +1,121 @@
+@use '../../scss/variables' as v;
+@use '../../scss/include-media.scss' as *;
+
 .card {
   display: flex;
   flex-direction: column;
+  background-color: v.$white;
+  border-radius: 1rem;
+  box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.2);
+  overflow: hidden;
 }
 
+.header {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  padding: 3rem 2.4rem;
+  background-repeat: no-repeat;
+  background-size: 9rem;
+  background-position: 96% center;
+
+  @include media('>=xs') {
+    padding-left: 3rem;
+    padding-right: 3rem;
+  }
+
+  .beginner & {
+    background-color: v.$accent;
+    background-image: url(../../assets/images/lamp.svg);
+  }
+
+  .pro & {
+    background-color: v.$secondary;
+    background-image: url(../../assets/images/goal.svg);
+  }
+
+  .business & {
+    color: v.$inverted-text-color;
+    background-color: v.$dark;
+    background-image: url(../../assets/images/notebook.svg);
+  }
+}
+
+.body {
+  display: flex;
+  flex-direction: column;
+  gap: 5.5rem;
+  height: 100%;
+  padding: 3rem;
+}
+
+.price {
+  flex-grow: 1;
+}
+
+.new,
+.old {
+  font-weight: 500;
+  line-height: 3.6rem;
+}
+
+.new {
+  font-size: 3rem;
+}
+
+.old {
+  padding-left: 2rem;
+  font-size: 2.5rem;
+  text-decoration-line: line-through;
+  opacity: 0.5;
+}
+
+.credit {
+  padding-top: 1rem;
+}
+
+.includes {
+  & p {
+    font-weight: 500;
+    font-size: 2rem;
+    line-height: 2.4rem;
+  }
+
+  & ul {
+    padding-top: 1rem;
+  }
+
+  & li {
+    display: flex;
+    margin-bottom: 0.3rem;
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+
+    &:before {
+      content: '';
+      width: 2rem;
+      height: 2rem;
+      margin-right: 0.8rem;
+      background-image: url(../../assets/images/check.png);
+      background-repeat: no-repeat;
+      background-size: contain;
+      background-position: center center;
+    }
+  }
+}
+
+.current {
+  &.beginner {
+    box-shadow: 0px 0px 20px v.$accent;
+  }
+
+  &.pro {
+    box-shadow: 0px 0px 20px v.$secondary;
+  }
+
+  &.business {
+    box-shadow: 0px 0px 20px v.$dark;
+  }
+}
