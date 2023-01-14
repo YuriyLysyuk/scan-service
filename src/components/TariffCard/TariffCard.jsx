@@ -21,6 +21,7 @@ const TariffCard = ({
     includes,
   },
 }) => {
+  // ToDo получать из настроек пользователя
   const isCurrent = 'beginner' === id;
 
   const cardClass = cx({
@@ -38,6 +39,8 @@ const TariffCard = ({
       </header>
 
       <div className={styles.body}>
+        {isCurrent && <span className={styles.badge}>Текущий тариф</span>}
+
         {Boolean(price) && (
           <div className={styles.price}>
             <span className={styles.new}>{formatPrice(price)}</span>
@@ -61,9 +64,15 @@ const TariffCard = ({
           </div>
         )}
 
-        <Button href={readMoreLink} color="primary">
-          Подробнее
-        </Button>
+        {isCurrent && (
+          <Button href={readMoreLink}>Перейти в личный кабинет</Button>
+        )}
+
+        {!isCurrent && (
+          <Button href={readMoreLink} color="primary">
+            Подробнее
+          </Button>
+        )}
       </div>
     </div>
   );

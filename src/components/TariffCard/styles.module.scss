@@ -7,7 +7,6 @@
   background-color: v.$white;
   border-radius: 1rem;
   box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.2);
-  overflow: hidden;
 }
 
 .header {
@@ -18,6 +17,7 @@
   background-repeat: no-repeat;
   background-size: 9rem;
   background-position: 96% center;
+  border-radius: 1rem 1rem 0 0;
 
   @include media('>=xs') {
     padding-left: 3rem;
@@ -42,11 +42,16 @@
 }
 
 .body {
+  position: relative;
   display: flex;
   flex-direction: column;
   gap: 5.5rem;
   height: 100%;
   padding: 3rem;
+  border-left: 0.2rem solid transparent;
+  border-right: 0.2rem solid transparent;
+  border-bottom: 0.2rem solid transparent;
+  border-radius: 0 0 1rem 1rem;
 }
 
 .price {
@@ -109,13 +114,38 @@
 .current {
   &.beginner {
     box-shadow: 0px 0px 20px v.$accent;
+
+    & .body {
+      border-color: v.$accent;
+    }
   }
 
   &.pro {
     box-shadow: 0px 0px 20px v.$secondary;
+
+    & .body {
+      border-color: v.$secondary;
+    }
   }
 
   &.business {
     box-shadow: 0px 0px 20px v.$dark;
+
+    & .body {
+      border-color: v.$dark;
+    }
   }
+}
+
+.badge {
+  position: absolute;
+  top: 1.2rem;
+  right: 1rem;
+  display: inline-flex;
+  padding: 0.4rem 1.3rem;
+  font-size: 1.4rem;
+  line-height: 1.7rem;
+  color: v.$inverted-text-color;
+  background-color: #3ba5e0;
+  border-radius: 1rem;
 }
