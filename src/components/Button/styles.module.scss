@@ -23,7 +23,12 @@
   }
 
   &:hover {
+    text-decoration: none;
     opacity: 0.8;
+  }
+
+  &:visited {
+    color: v.$default-btn-text-color;
   }
 }
 
@@ -71,9 +76,17 @@
 .primary {
   color: v.$primary-btn-text-color;
   background-color: v.$primary-btn-bg-color;
+
+  &:visited {
+    color: v.$primary-btn-text-color;
+  }
 }
 
 .secondary {
   color: v.$secondary-btn-text-color;
   background-color: v.$secondary-btn-bg-color;
+
+  &:visited {
+    color: v.$secondary-btn-text-color;
+  }
 }
