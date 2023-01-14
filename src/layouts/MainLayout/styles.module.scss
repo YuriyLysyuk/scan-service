@@ -1,1 +1,14 @@
+.header,
+.main,
+.footer {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  max-width: 132rem;
+  margin: 0 auto;
+  padding: 2rem;
+}
 
+.main {
+  gap: 2rem;
+}

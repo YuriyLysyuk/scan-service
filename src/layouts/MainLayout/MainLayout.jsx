@@ -5,11 +5,11 @@ import styles from './styles.module.scss';
 const MainLayout = ({ children }) => {
   return (
     <>
-      <header>header</header>
+      <header className={styles.header}>header</header>
 
-      <main>{children}</main>
+      <main className={styles.main}>{children}</main>
 
-      <footer>footer</footer>
+      <footer className={styles.footer}>footer</footer>
     </>
   );
 };
