@@ -8,13 +8,17 @@ const MainLayout = ({ children }) => {
   return (
     <>
       <header className={styles.header}>
-        <Logo />
+        <div className={styles.container}>
+          <Logo />
+        </div>
       </header>
 
       <main className={styles.main}>{children}</main>
 
       <footer className={styles.footer}>
-        <Logo color="white" />
+        <div className={styles.container}>
+          <Logo color="white" />
+        </div>
       </footer>
     </>
   );

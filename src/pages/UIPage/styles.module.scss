@@ -1,16 +1,9 @@
 @use '../../scss/placeholders';
 
-.row,
-.column {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: flex-start;
-  align-items: flex-start;
-  gap: 2rem;
-
-  @extend %container;
+.row {
+  @extend %row;
 }
 
 .column {
-  flex-direction: column;
+  @extend %column;
 }

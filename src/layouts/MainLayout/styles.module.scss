@@ -1,16 +1,10 @@
 @use '../../scss/placeholders';
+@use '../../scss/variables' as v;
 
-.header,
-.main,
-.footer {
-  display: flex;
-}
-
-.header,
-.footer {
+.container {
   @extend %container;
 }
 
-.main {
-  flex-direction: column;
+.footer {
+  background-color: v.$accent-2;
 }
