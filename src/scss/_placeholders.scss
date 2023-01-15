@@ -1,3 +1,10 @@
 %transition {
   transition: all 0.3s ease-out;
 }
+
+%container {
+  width: 100%;
+  max-width: 136rem;
+  margin: 0 auto;
+  padding: 2rem;
+}

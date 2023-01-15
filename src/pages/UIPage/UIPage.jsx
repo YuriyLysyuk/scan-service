@@ -14,7 +14,7 @@ import { ReactComponent as YandexSVG } from '../../assets/images/yandex.svg';
 const UIPage = () => {
   return (
     <MainLayout>
-      <div className={styles.column}>
+      <section className={styles.column}>
         <Button color="primary" size="big">
           Войти
         </Button>
@@ -30,9 +30,9 @@ const UIPage = () => {
         <Button color="secondary" size="small">
           Читать в источнике
         </Button>
-      </div>
+      </section>
 
-      <div className={styles.row}>
+      <section className={styles.row}>
         <Button size="social">
           <GoogleSVG />
         </Button>
@@ -44,37 +44,35 @@ const UIPage = () => {
         <Button size="social">
           <YandexSVG />
         </Button>
-      </div>
+      </section>
 
-      <div className={styles.row}>
-        <div>
-          <h1>Заголовок 1</h1>
-          <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Animi
-            quidem nobis error distinctio ipsa sit praesentium expedita itaque
-            fugit, voluptatem iste quis rerum est odit odio pariatur. Voluptate,
-            esse consequatur.
-          </p>
-          <h2>Заголовок 2</h2>
-          <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Animi
-            quidem nobis error distinctio ipsa sit praesentium expedita itaque
-            fugit, voluptatem iste quis rerum est odit odio pariatur. Voluptate,
-            esse consequatur.
-          </p>
-          <h3>Заголовок 3</h3>
-          <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Animi
-            quidem nobis error distinctio ipsa sit praesentium expedita itaque
-            fugit, voluptatem iste quis rerum est odit odio pariatur. Voluptate,
-            esse consequatur.
-          </p>
-        </div>
-      </div>
+      <section className={styles.row}>
+        <h1>Заголовок 1</h1>
+        <p>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Animi quidem
+          nobis error distinctio ipsa sit praesentium expedita itaque fugit,
+          voluptatem iste quis rerum est odit odio pariatur. Voluptate, esse
+          consequatur.
+        </p>
+        <h2>Заголовок 2</h2>
+        <p>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Animi quidem
+          nobis error distinctio ipsa sit praesentium expedita itaque fugit,
+          voluptatem iste quis rerum est odit odio pariatur. Voluptate, esse
+          consequatur.
+        </p>
+        <h3>Заголовок 3</h3>
+        <p>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Animi quidem
+          nobis error distinctio ipsa sit praesentium expedita itaque fugit,
+          voluptatem iste quis rerum est odit odio pariatur. Voluptate, esse
+          consequatur.
+        </p>
+      </section>
 
-      <div className={styles.row}>
+      <section className={styles.row}>
         <TariffList />
-      </div>
+      </section>
     </MainLayout>
   );
 };
