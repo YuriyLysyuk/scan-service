@@ -1,5 +1,7 @@
 import React from 'react';
 
+import styles from './styles.module.scss';
+
 import logoWhiteURL from '../../assets/images/logo-white.png';
 import logoGradientURL from '../../assets/images/logo-gradient.png';
 
@@ -19,7 +21,7 @@ const Logo = ({ color }) => {
 
   return (
     <a href="/">
-      <img src={logoSrc} alt="Логотип СКАН" />
+      <img className={styles.logo} src={logoSrc} alt="Логотип СКАН" />
     </a>
   );
 };
