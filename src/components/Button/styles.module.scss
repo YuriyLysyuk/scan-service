@@ -77,7 +77,10 @@
   color: v.$primary-btn-text-color;
   background-color: v.$primary-btn-bg-color;
 
-  &:visited {
+  &:visited,
+  &:hover,
+  &:focus,
+  &:active {
     color: v.$primary-btn-text-color;
   }
 }
@@ -86,7 +89,10 @@
   color: v.$secondary-btn-text-color;
   background-color: v.$secondary-btn-bg-color;
 
-  &:visited {
+  &:visited,
+  &:hover,
+  &:focus,
+  &:active {
     color: v.$secondary-btn-text-color;
   }
 }

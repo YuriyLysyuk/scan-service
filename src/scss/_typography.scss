@@ -103,8 +103,9 @@ a {
   &:active,
   &:hover {
     color: v.$text-color;
-    text-decoration: underline;
+    text-decoration: none;
     outline: 0;
+    opacity: 0.5;
   }
 }
 

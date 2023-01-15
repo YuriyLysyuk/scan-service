@@ -1,3 +1,17 @@
+export const CONTACTS = {
+  address: 'г. Москва, Цветной б-р, 40',
+  phone: {
+    text: '+7 (495) 771-21-11',
+    link: 'tel:+74957712111',
+  },
+  email: {
+    text: 'info@scan.ru',
+    link: 'mailto:info@scan.ru',
+  },
+};
+
+export const COPYRIGHT = 'Сделано с любовью ❤️ 2023';
+
 export const TARIFFS = [
   {
     id: 'beginner',
