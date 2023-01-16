@@ -5,6 +5,7 @@ import styles from './styles.module.scss';
 
 import Menu from '../Menu/Menu';
 import UserMenu from '../UserMenu/UserMenu';
+import Limits from '../Limits/Limits';
 
 import { MENU } from '../../constants';
 import Logo from '../../components/Logo/Logo';
@@ -21,6 +22,8 @@ const Navbar = () => {
       </label>
 
       <Menu extClass={styles.menu} menu={MENU} />
+
+      <Limits />
 
       <UserMenu extClass={styles.user} />
 
