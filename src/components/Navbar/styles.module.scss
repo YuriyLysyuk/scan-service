@@ -9,6 +9,15 @@
 
   justify-content: space-between;
   align-items: stretch;
+  .logo {
+    margin-top: 1.1rem;
+    margin-bottom: 1.1rem;
+
+    @include media('>=#{v.$mobile-menu-breakpoint}') {
+      margin-top: 0.5rem;
+      margin-bottom: 0.5rem;
+    }
+  }
 
   & > .menu,
   & > .user {

@@ -12,7 +12,7 @@ import Logo from '../../components/Logo/Logo';
 const Navbar = () => {
   return (
     <div className={styles.navbar}>
-      <Logo />
+      <Logo extClass={styles.logo} />
 
       <input id="menu-toggle" className={styles.toggle} type="checkbox" />
 

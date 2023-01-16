@@ -5,7 +5,9 @@ import styles from './styles.module.scss';
 import logoWhiteURL from '../../assets/images/logo-white.png';
 import logoGradientURL from '../../assets/images/logo-gradient.png';
 
-const Logo = ({ color }) => {
+const Logo = ({ extClass, color }) => {
+  const logoClass = classNames(styles.logo, extClass);
+
   let logoSrc = '';
 
   switch (color) {
@@ -21,7 +23,7 @@ const Logo = ({ color }) => {
 
   return (
     <a href="/">
-      <img className={styles.logo} src={logoSrc} alt="Логотип СКАН" />
+      <img className={logoClass} src={logoSrc} alt="Логотип СКАН" />
     </a>
   );
 };
