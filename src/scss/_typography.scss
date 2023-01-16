@@ -94,7 +94,6 @@ a {
   @extend %transition;
 
   &:visited {
-    color: v.$text-color;
     text-decoration: none;
     outline: 0;
   }

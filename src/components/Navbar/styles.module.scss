@@ -35,24 +35,9 @@
 
   @extend %transition;
 
-  a {
-    font-size: 1.6rem;
-    line-height: 1.9rem;
-    color: v.$inverted-text-color;
-  }
-
   & > .menu,
   & > .user {
     grid-column: 1 / 3;
-    flex-direction: column;
-  }
-
-  & > .menu {
-    gap: 2.6rem;
-  }
-
-  & > .user {
-    gap: 2rem;
   }
 }
 

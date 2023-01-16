@@ -3,17 +3,28 @@
 
 .unauthorized {
   display: flex;
+  flex-direction: column;
   align-items: center;
   gap: 2rem;
   padding-left: 2rem;
   padding-right: 2rem;
-  font-size: 1.4rem;
-  line-height: 1.7rem;
+
+  @include media('>=#{v.$mobile-menu-breakpoint}') {
+    flex-direction: row;
+  }
 }
 
 .signup {
-  color: v.$light;
+  font-size: 1.6rem;
+  line-height: 1.9rem;
+  color: v.$inverted-text-color;
   opacity: 0.4;
+
+  @include media('>=#{v.$mobile-menu-breakpoint}') {
+    font-size: 1.4rem;
+    line-height: 1.7rem;
+    color: v.$text-color;
+  }
 
   &:hover {
     opacity: 0.8;
@@ -39,5 +50,51 @@ a.login {
     padding: 0.5rem 1rem;
     font-size: 1.4rem;
     line-height: 1.7rem;
+  }
+}
+
+.authorized {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+
+  @include media('>=#{v.$mobile-menu-breakpoint}') {
+  }
+}
+
+.info {
+  display: flex;
+  flex-direction: column;
+  gap: 0.3rem;
+  text-align: right;
+
+  @include media('>=#{v.$mobile-menu-breakpoint}') {
+  }
+}
+
+.name {
+  font-size: 1.4rem;
+  line-height: 1.7rem;
+  opacity: 0.7;
+
+  @include media('>=#{v.$mobile-menu-breakpoint}') {
+  }
+}
+
+.logout {
+  font-size: 1rem;
+  line-height: 1.2rem;
+  opacity: 0.4;
+
+  @include media('>=#{v.$mobile-menu-breakpoint}') {
+  }
+}
+
+.avatar {
+  width: 3.2rem;
+  height: 3.2rem;
+  border-radius: 50%;
+
+  @include media('>=#{v.$mobile-menu-breakpoint}') {
   }
 }
