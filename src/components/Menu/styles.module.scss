@@ -1,0 +1,14 @@
+.menu {
+  display: flex;
+  align-items: center;
+  gap: 5rem;
+}
+
+.item {
+  font-size: 1.4rem;
+  line-height: 1.7rem;
+
+  &:hover {
+    opacity: 0.5;
+  }
+}

@@ -3,8 +3,11 @@ import classNames from 'classnames';
 
 import styles from './styles.module.scss';
 
-import Logo from '../../components/Logo/Logo';
 import Button from '../Button/Button';
+import Menu from '../Menu/Menu';
+
+import { MENU } from '../../constants';
+import Logo from '../../components/Logo/Logo';
 
 const Navbar = () => {
   return (
@@ -17,11 +20,7 @@ const Navbar = () => {
         <span className={styles.line}></span>
       </label>
 
-      <nav className={styles.menu}>
-        <a href="/">Главная</a>
-        <a href="#">Тарифы</a>
-        <a href="#">FAQ</a>
-      </nav>
+      <Menu extClass={styles.menu} menu={MENU} />
 
       <div className={styles.user}>
         <a className={styles.signup} href="#">
@@ -42,11 +41,7 @@ const Navbar = () => {
           <span className={styles.line}></span>
         </label>
 
-        <nav className={styles.menu}>
-          <a href="/">Главная</a>
-          <a href="#">Тарифы</a>
-          <a href="#">FAQ</a>
-        </nav>
+        <Menu extClass={styles.menu} menu={MENU} />
 
         <div className={styles.user}>
           <a className={styles.signup} href="#">

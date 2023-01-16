@@ -12,6 +12,21 @@ export const CONTACTS = {
 
 export const COPYRIGHT = 'Сделано с любовью ❤️ 2023';
 
+export const MENU = [
+  {
+    title: 'Главная',
+    link: '/',
+  },
+  {
+    title: 'Тарифы',
+    link: '#',
+  },
+  {
+    title: 'FAQ',
+    link: '#',
+  },
+]
+
 export const TARIFFS = [
   {
     id: 'beginner',
