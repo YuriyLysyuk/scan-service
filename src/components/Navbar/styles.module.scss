@@ -10,7 +10,8 @@
   justify-content: space-between;
   align-items: stretch;
 
-  & > .menu {
+  & > .menu,
+  & > .user {
     display: none;
 
     @include media('>=#{v.$mobile-menu-breakpoint}') {
@@ -34,75 +35,25 @@
 
   @extend %transition;
 
-  & > .menu {
-    grid-column: 1 / 3;
-    flex-direction: column;
-    gap: 2.6rem;
-
-    a {
-      font-size: 1.6rem;
-      line-height: 1.9rem;
-      color: v.$light;
-    }
-  }
-}
-
-.user {
-  align-items: center;
-  gap: 2rem;
-  font-size: 1.4rem;
-  line-height: 1.7rem;
-
   a {
-    &:hover {
-      opacity: 0.8;
-    }
+    font-size: 1.6rem;
+    line-height: 1.9rem;
+    color: v.$inverted-text-color;
   }
 
-  .navbar > & {
-    display: none;
-
-    @include media('>=#{v.$mobile-menu-breakpoint}') {
-      display: flex;
-    }
-  }
-
-  .mobile & {
+  & > .menu,
+  & > .user {
     grid-column: 1 / 3;
-    display: flex;
     flex-direction: column;
-
-    @include media('>=#{v.$mobile-menu-breakpoint}') {
-      display: none;
-    }
-
-    a {
-      font-size: 1.6rem;
-      line-height: 1.9rem;
-      color: v.$light;
-    }
-
-    .login {
-    }
   }
-}
 
-.vr {
-  width: 0.2rem;
-  height: 2.6rem;
-  background: #029491;
-  opacity: 0.6;
-}
+  & > .menu {
+    gap: 2.6rem;
+  }
 
-.signup {
-  opacity: 0.4;
-}
-
-.login {
-  padding: 0.5rem 1rem !important;
-  font-weight: 500 !important;
-  font-size: 1.4rem !important;
-  line-height: 1.7rem !important;
+  & > .user {
+    gap: 2rem;
+  }
 }
 
 .hamburger {

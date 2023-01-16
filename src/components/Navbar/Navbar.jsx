@@ -3,8 +3,8 @@ import classNames from 'classnames';
 
 import styles from './styles.module.scss';
 
-import Button from '../Button/Button';
 import Menu from '../Menu/Menu';
+import UserMenu from '../UserMenu/UserMenu';
 
 import { MENU } from '../../constants';
 import Logo from '../../components/Logo/Logo';
@@ -22,17 +22,7 @@ const Navbar = () => {
 
       <Menu extClass={styles.menu} menu={MENU} />
 
-      <div className={styles.user}>
-        <a className={styles.signup} href="#">
-          Зарегистрироваться
-        </a>
-
-        <div className={styles.vr}></div>
-
-        <Button extClass={styles.login} href="#" color="secondary" size="small">
-          Войти
-        </Button>
-      </div>
+      <UserMenu extClass={styles.user} />
 
       <div className={styles.mobile}>
         <Logo color="white" />
@@ -43,20 +33,7 @@ const Navbar = () => {
 
         <Menu extClass={styles.menu} menu={MENU} />
 
-        <div className={styles.user}>
-          <a className={styles.signup} href="#">
-            Зарегистрироваться
-          </a>
-
-          <Button
-            extClass={styles.login}
-            href="#"
-            color="secondary"
-            size="small"
-          >
-            Войти
-          </Button>
-        </div>
+        <UserMenu extClass={styles.user} />
       </div>
     </div>
   );

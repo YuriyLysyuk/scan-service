@@ -1,0 +1,43 @@
+@use '../../scss/variables' as v;
+@use '../../scss/include-media' as *;
+
+.unauthorized {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+  padding-left: 2rem;
+  padding-right: 2rem;
+  font-size: 1.4rem;
+  line-height: 1.7rem;
+}
+
+.signup {
+  color: v.$light;
+  opacity: 0.4;
+
+  &:hover {
+    opacity: 0.8;
+  }
+}
+
+.vr {
+  display: none;
+  width: 0.2rem;
+  height: 2.6rem;
+  background-color: v.$accent-2;
+  opacity: 0.6;
+
+  @include media('>=#{v.$mobile-menu-breakpoint}') {
+    display: block;
+  }
+}
+
+a.login {
+  font-weight: 500;
+
+  @include media('>=#{v.$mobile-menu-breakpoint}') {
+    padding: 0.5rem 1rem;
+    font-size: 1.4rem;
+    line-height: 1.7rem;
+  }
+}
