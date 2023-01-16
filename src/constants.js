@@ -1,3 +1,5 @@
+export const IS_AUTORIZED = true;
+
 export const CONTACTS = {
   address: 'г. Москва, Цветной б-р, 40',
   phone: {
@@ -25,7 +27,7 @@ export const MENU = [
     title: 'FAQ',
     link: '#',
   },
-]
+];
 
 export const TARIFFS = [
   {

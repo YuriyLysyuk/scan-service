@@ -6,7 +6,7 @@ import styles from './styles.module.scss';
 import Button from '../Button/Button';
 
 // ToDo авторизация
-const isAuthorized = true;
+import { IS_AUTORIZED } from '../../constants';
 const user = {
   name: 'Алексей А.',
   avatar: 'https://randomuser.me/api/portraits/men/79.jpg',
@@ -16,7 +16,7 @@ const UserMenu = ({ extClass }) => {
   const unauthorizedClass = classNames(styles.unauthorized, extClass);
   const authorizedClass = classNames(styles.authorized, extClass);
 
-  return isAuthorized ? (
+  return IS_AUTORIZED ? (
     <div className={authorizedClass}>
       <div className={styles.info}>
         <p className={styles.name}>{user.name}</p>

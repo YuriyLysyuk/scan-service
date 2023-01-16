@@ -5,13 +5,13 @@ import styles from './styles.module.scss';
 import Spinner from '../Spinner/Spinner';
 
 // ToDo автроризация, получение лимитов
-const isAuthorized = true;
+import { IS_AUTORIZED } from '../../constants';
 
 const Limits = () => {
   const [limits, setLimits] = useState({});
   const [isLoading, setIsLoading] = useState(true);
 
-  if (!isAuthorized) return '';
+  if (!IS_AUTORIZED) return '';
 
   const getLimits = () => {
     setTimeout(() => {
