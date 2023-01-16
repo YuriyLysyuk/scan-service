@@ -5,7 +5,7 @@ import styles from './styles.module.scss';
 
 import Button from '../Button/Button';
 
-import { formatPrice } from '../../utils.js/helpers';
+import { formatPrice } from '../../utils/helpers';
 
 const cx = classNames.bind(styles);
 
