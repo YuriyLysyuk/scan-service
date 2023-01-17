@@ -31,7 +31,6 @@ const Limits = () => {
         <Spinner extClass={styles.spinner} />
       ) : (
         <>
-          {console.log(limits)}
           <p className={styles.text}>Использовано компаний</p>
           <p className={styles.used}>{limits.used}</p>
           <p className={styles.text}>Лимит по компаниям</p>
