@@ -7,6 +7,7 @@ import styles from './styles.module.scss';
 import { IS_AUTORIZED } from '../../constants';
 import MainLayout from '../../layouts/MainLayout/MainLayout';
 import Button from '../../components/Button/Button';
+import MainSlider from '../../components/MainSlider/MainSlider';
 
 import imgSrcManDashboard from '../../assets/images/man-dashboard.jpg';
 
@@ -32,6 +33,12 @@ const MainPage = () => {
         </div>
 
         <img className={styles.hero__img} src={imgSrcManDashboard} />
+      </section>
+
+      <section className={styles.whywe}>
+        <h2 className={styles.whywe__title}>Почему именно мы</h2>
+
+        <MainSlider className={styles.whywe__slider} />
       </section>
     </MainLayout>
   );

@@ -32,3 +32,15 @@
     }
   }
 }
+
+.whywe {
+  @extend %section-padding;
+
+  &__slider {
+    margin-top: 3rem;
+
+    @include media('>=#{v.$mobile-menu-breakpoint}') {
+      margin-top: 7rem;
+    }
+  }
+}
