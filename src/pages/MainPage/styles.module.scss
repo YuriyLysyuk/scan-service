@@ -1,0 +1,34 @@
+@use '../../scss/placeholders';
+@use '../../scss/variables' as v;
+@use '../../scss/include-media' as *;
+
+.hero {
+  display: grid;
+  grid-template-columns: 1fr;
+  justify-items: start;
+  align-items: start;
+  gap: v.$gap;
+  padding: v.$padding;
+
+  @include media('>=#{v.$mobile-menu-breakpoint}') {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  &__text {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  &__desc {
+    margin-top: v.$margin;
+  }
+
+  &__btn {
+    margin-top: 3rem;
+
+    @include media('>=#{v.$mobile-menu-breakpoint}') {
+      margin-top: 7rem;
+    }
+  }
+}
