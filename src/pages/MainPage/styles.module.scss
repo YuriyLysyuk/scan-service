@@ -8,7 +8,7 @@
   justify-items: start;
   align-items: start;
   gap: v.$gap;
-  padding: v.$padding;
+  @extend %section-padding;
 
   @include media('>=#{v.$mobile-menu-breakpoint}') {
     grid-template-columns: 1fr 1fr;
