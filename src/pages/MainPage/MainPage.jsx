@@ -3,7 +3,7 @@ import React from 'react';
 import styles from './styles.module.scss';
 
 // ToDO авторизация
-import { IS_AUTORIZED } from '../../constants';
+import { IS_AUTORIZED, TARIFFS } from '../../constants';
 import MainLayout from '../../layouts/MainLayout/MainLayout';
 import Button from '../../components/Button/Button';
 import MainSlider from '../../components/MainSlider/MainSlider';

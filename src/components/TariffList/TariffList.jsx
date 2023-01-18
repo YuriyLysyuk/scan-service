@@ -5,13 +5,15 @@ import styles from './styles.module.scss';
 
 import TariffCard from '../TariffCard/TariffCard';
 
-import { TARIFFS } from '../../constants';
+const TariffList = ({ className, tariffs }) => {
+  if (Boolean(tariffs?.length) === false) return;
 
-const TariffList = () => {
+  const listStyle = classNames(styles.list, className);
+
   return (
-    Boolean(TARIFFS) && (
-      <div className={styles.list}>
-        {TARIFFS.map((tariff) => (
+    Boolean(tariffs) && (
+      <div className={listStyle}>
+        {tariffs.map((tariff) => (
           <TariffCard key={tariff.id} tariff={tariff} />
         ))}
       </div>
