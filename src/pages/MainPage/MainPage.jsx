@@ -15,9 +15,7 @@ const MainPage = () => {
     <MainLayout>
       <section className={styles.hero}>
         <div className={styles.hero__text}>
-          <h1 className={styles.hero__title}>
-            Сервис по поиску публикаций о компании по его ИНН
-          </h1>
+          <h1>Сервис по поиску публикаций о компании по его ИНН</h1>
 
           <p className={styles.hero__desc}>
             Комплексный анализ публикаций, получение данных в формате PDF на
@@ -39,7 +37,7 @@ const MainPage = () => {
       </section>
 
       <section className={styles.whywe}>
-        <h2 className={styles.whywe__title}>Почему именно мы</h2>
+        <h2>Почему именно мы</h2>
 
         <MainSlider className={styles.whywe__slider} />
 
