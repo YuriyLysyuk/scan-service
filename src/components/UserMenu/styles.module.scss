@@ -1,0 +1,113 @@
+@use '../../scss/variables' as v;
+@use '../../scss/include-media' as *;
+
+.unauthorized {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2rem;
+  padding-left: 2rem;
+  padding-right: 2rem;
+
+  @include media('>=#{v.$mobile-menu-breakpoint}') {
+    flex-direction: row;
+  }
+}
+
+.signup {
+  font-size: 1.6rem;
+  line-height: 1.9rem;
+  color: v.$inverted-text-color;
+  opacity: 0.4;
+
+  @include media('>=#{v.$mobile-menu-breakpoint}') {
+    font-size: 1.4rem;
+    line-height: 1.7rem;
+    color: v.$text-color;
+  }
+
+  &:hover {
+    opacity: 0.8;
+  }
+}
+
+.vr {
+  display: none;
+  width: 0.2rem;
+  height: 2.6rem;
+  background-color: v.$accent-2;
+  opacity: 0.6;
+
+  @include media('>=#{v.$mobile-menu-breakpoint}') {
+    display: block;
+  }
+}
+
+a.login {
+  font-weight: 500;
+
+  @include media('>=#{v.$mobile-menu-breakpoint}') {
+    padding: 0.5rem 1rem;
+    font-size: 1.4rem;
+    line-height: 1.7rem;
+  }
+}
+
+.authorized {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+
+  @include media('>=#{v.$mobile-menu-breakpoint}') {
+    gap: 0.4rem;
+  }
+}
+
+.info {
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+  align-items: flex-end;
+
+  @include media('>=#{v.$mobile-menu-breakpoint}') {
+    gap: 0.3rem;
+  }
+}
+
+.name {
+  font-size: 1.6rem;
+  line-height: 1.9rem;
+  color: v.$inverted-text-color;
+  opacity: 0.7;
+
+  @include media('>=#{v.$mobile-menu-breakpoint}') {
+    font-size: 1.4rem;
+    line-height: 1.7rem;
+    color: v.$text-color;
+  }
+}
+
+.logout {
+  font-size: 1.6rem;
+  line-height: 1.9rem;
+  color: v.$inverted-text-color;
+  opacity: 0.4;
+
+  @include media('>=#{v.$mobile-menu-breakpoint}') {
+    font-size: 1rem;
+    line-height: 1.2rem;
+    color: v.$text-color;
+  }
+}
+
+.avatar {
+  width: 5rem;
+  height: 5rem;
+  border-radius: 50%;
+
+  @include media('>=#{v.$mobile-menu-breakpoint}') {
+    width: 3.2rem;
+    height: 3.2rem;
+  }
+}

@@ -1,0 +1,147 @@
+@use '../../scss/placeholders';
+@use '../../scss/variables' as v;
+@use '../../scss/include-media' as *;
+
+.navbar {
+  position: relative;
+
+  @extend %row;
+
+  flex-wrap: nowrap;
+  justify-content: space-between;
+  align-items: stretch;
+  gap: 1rem;
+  padding-top: 0.9rem;
+  padding-bottom: 0.9rem;
+
+  @include media('>=#{v.$mobile-menu-breakpoint}') {
+    flex-wrap: wrap;
+    gap: 2rem;
+    padding-top: 1.5rem;
+    padding-bottom: 1.5rem;
+  }
+
+  .logo {
+    margin-top: 1.1rem;
+    margin-bottom: 1.1rem;
+
+    @include media('>=#{v.$mobile-menu-breakpoint}') {
+      margin-top: 0.5rem;
+      margin-bottom: 0.5rem;
+    }
+  }
+
+  & > .menu,
+  & > .user {
+    display: none;
+
+    @include media('>=#{v.$mobile-menu-breakpoint}') {
+      display: flex;
+    }
+  }
+}
+
+.mobile {
+  position: fixed;
+  top: 0;
+  right: -100%;
+  display: grid;
+  align-items: start;
+  grid-template-columns: 1fr auto;
+  width: 0;
+  height: 100vh;
+  padding: 2rem;
+  background-color: v.$accent-2;
+  opacity: 0;
+
+  @extend %transition;
+
+  & > .menu,
+  & > .user {
+    grid-column: 1 / 3;
+  }
+}
+
+.hamburger {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 2rem 1rem;
+  line-height: 1;
+  border-radius: 0.1rem;
+  cursor: pointer;
+
+  @include media('>=#{v.$mobile-menu-breakpoint}') {
+    display: none;
+  }
+
+  .navbar > & {
+    order: 1;
+  }
+
+  .mobile & {
+    padding-top: 2.4rem;
+    padding-bottom: 2.4rem;
+  }
+}
+
+.line {
+  position: relative;
+  width: 3rem;
+  height: 0.5rem;
+  background-color: v.$accent-2;
+  border-radius: 0.1rem;
+
+  @extend %transition;
+
+  &:before,
+  &:after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: v.$accent-2;
+    border-radius: 0.1rem;
+
+    @extend %transition;
+  }
+
+  &:before {
+    top: -1rem;
+  }
+
+  &:after {
+    top: 1rem;
+  }
+
+  .toggle:checked ~ .mobile .hamburger & {
+    background-color: transparent;
+
+    &:before,
+    &:after {
+      top: 0;
+      width: 110%;
+      height: 110%;
+      background-color: v.$light;
+    }
+
+    &:before {
+      transform: rotate(135deg);
+    }
+
+    &:after {
+      transform: rotate(225deg);
+    }
+  }
+}
+
+.toggle {
+  display: none;
+
+  &:checked ~ .mobile {
+    width: 100%;
+    right: 0;
+    opacity: 1;
+    z-index: 1;
+  }
+}

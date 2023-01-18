@@ -1,0 +1,74 @@
+@use '../../scss/placeholders';
+@use '../../scss/variables' as v;
+@use '../../scss/include-media' as *;
+
+.hero {
+  display: grid;
+  grid-template-columns: 1fr;
+  justify-items: start;
+  align-items: start;
+  gap: v.$gap;
+  @extend %section-padding;
+
+  @include media('>=#{v.$mobile-menu-breakpoint}') {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  &__text {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  &__desc {
+    margin-top: v.$margin;
+  }
+
+  &__btn {
+    margin-top: 3rem;
+
+    @include media('>=#{v.$mobile-menu-breakpoint}') {
+      margin-top: 7rem;
+    }
+  }
+}
+
+.whywe {
+  @extend %section-padding;
+
+  &__slider {
+    margin-top: 1.5rem;
+
+    @include media('>=#{v.$mobile-menu-breakpoint}') {
+      margin-top: 5rem;
+    }
+  }
+
+  &__bg {
+    margin-top: 6.5rem;
+    padding-top: 87.6082632%;
+    background-image: url(../../assets/images/man-on-bench.svg);
+    background-repeat: no-repeat;
+    background-size: 200%;
+    background-position: center left;
+
+    @include media('>=#{v.$mobile-menu-breakpoint}') {
+      margin-top: 5.5rem;
+      padding-top: 43.8041316%;
+      background-size: contain;
+      background-position: center center;
+    }
+  }
+}
+
+.tariff {
+  @extend %section-padding;
+
+  &__list {
+    margin-top: 3.5rem;
+
+    @include media('>=#{v.$mobile-menu-breakpoint}') {
+      margin-top: 7rem;
+    }
+  }
+}

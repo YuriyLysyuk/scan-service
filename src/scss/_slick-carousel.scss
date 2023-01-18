@@ -1,0 +1,12 @@
+/**
+ * Slick carousel
+ */
+
+@use 'slick-carousel/slick/slick.scss';
+
+@use './variables' as v;
+
+@forward 'slick-carousel/slick/slick-theme.scss' with (
+  $slick-arrow-color: v.$dark,
+  $slick-font-family: none
+);

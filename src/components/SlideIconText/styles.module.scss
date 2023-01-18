@@ -1,0 +1,28 @@
+@use '../../scss/include-media' as *;
+@use '../../scss/variables' as v;
+
+.inner {
+  display: flex;
+  flex-direction: column;
+  margin: 1.5rem;
+  padding: 3rem 1.7rem;
+  background: #ffffff;
+  box-shadow: 0 0 1.5rem rgba(0, 0, 0, 0.2);
+  border-radius: 1rem;
+
+  @include media('>=#{v.$mobile-menu-breakpoint}') {
+    margin: 1.5rem;
+    padding-left: 2rem;
+    padding-right: 2rem;
+  }
+}
+
+.icon {
+  width: 100%;
+  max-width: 6.4rem;
+  height: auto;
+}
+
+.text {
+  padding-top: 2rem;
+}

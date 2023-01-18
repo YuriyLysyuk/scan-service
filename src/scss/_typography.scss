@@ -1,0 +1,133 @@
+@use './variables' as v;
+@use './placeholders';
+@use './include-media.scss' as *;
+
+// Typography
+html,
+body {
+  font-family: v.$body-font;
+  font-weight: v.$body-font-weight;
+}
+
+html {
+  font-size: v.$basic-font-size;
+}
+
+body {
+  color: v.$text-color;
+  font-size: v.$paragraph;
+  line-height: v.$line-height;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeSpeed;
+}
+
+h1,
+h2,
+.h2 {
+  font-family: v.$header-font;
+  font-weight: v.$header-font-weight;
+  font-size: 2.8rem;
+  line-height: 3.4rem;
+}
+
+h1 {
+  @include media('>=md') {
+    font-size: 6rem;
+    line-height: 7.2rem;
+  }
+}
+
+h2,
+.h2 {
+  @include media('>=md') {
+    font-size: 4.5rem;
+    line-height: 5.4rem;
+  }
+}
+
+h3,
+h4 {
+  font-family: v.$body-font;
+  letter-spacing: 0.02em;
+  font-weight: 500;
+}
+
+h3 {
+  font-size: 3rem;
+  line-height: 3.6rem;
+}
+
+h4 {
+  font-size: 1.9rem;
+  line-height: 2.3rem;
+
+  @include media('>=md') {
+    font-size: 2.6rem;
+    line-height: 3.1rem;
+  }
+}
+
+h1,
+h2,
+.h2,
+p,
+span,
+li,
+a,
+button {
+  letter-spacing: 0.01rem;
+}
+
+html,
+button,
+input,
+select,
+textarea {
+  color: v.$text-color;
+}
+
+a {
+  color: v.$text-color;
+  text-decoration: none;
+
+  @extend %transition;
+
+  &:visited {
+    text-decoration: none;
+    outline: 0;
+  }
+
+  &:focus,
+  &:active,
+  &:hover {
+    color: v.$text-color;
+    text-decoration: none;
+    outline: 0;
+  }
+}
+
+i,
+em {
+  font-style: italic;
+}
+
+b,
+strong {
+  font-weight: bold;
+}
+
+input {
+  &:focus {
+    outline: none;
+  }
+}
+
+[disabled] {
+  pointer-events: none;
+  opacity: 0.5;
+}
+
+.br {
+  display: block;
+}

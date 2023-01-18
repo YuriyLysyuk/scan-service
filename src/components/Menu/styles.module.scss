@@ -1,0 +1,30 @@
+@use '../../scss/include-media' as *;
+@use '../../scss/variables' as v;
+
+.menu {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2.6rem;
+
+  @include media('>=#{v.$mobile-menu-breakpoint}') {
+    flex-direction: row;
+    gap: 5rem;
+  }
+}
+
+.item {
+  font-size: 1.6rem;
+  line-height: 1.9rem;
+  color: v.$inverted-text-color;
+
+  @include media('>=#{v.$mobile-menu-breakpoint}') {
+    font-size: 1.4rem;
+    line-height: 1.7rem;
+    color: v.$text-color;
+  }
+
+  &:hover {
+    opacity: 0.5;
+  }
+}

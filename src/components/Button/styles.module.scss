@@ -1,0 +1,99 @@
+@use '../../scss/variables' as v;
+@use '../../scss/placeholders';
+@use '../../scss/include-media.scss' as *;
+
+.btn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  padding: 1.6rem 2rem;
+  font-size: 1.8rem;
+  line-height: 2.2rem;
+  font-weight: 400;
+  color: v.$default-btn-text-color;
+  background-color: v.$default-btn-bg-color;
+  border-radius: v.$bd-radius;
+  @extend %transition;
+
+  @include media('>=xs') {
+    width: auto;
+    padding: 1.6rem 3rem;
+    font-size: 2rem;
+    line-height: 2.4rem;
+  }
+
+  &:hover {
+    text-decoration: none;
+    opacity: 0.8;
+  }
+
+  &:visited {
+    color: v.$default-btn-text-color;
+  }
+}
+
+.small {
+  padding-top: 1.4rem;
+  padding-bottom: 1.4rem;
+  font-size: 1.4rem;
+  line-height: 1.7rem;
+  font-weight: 400;
+
+  @include media('>=xs') {
+    width: auto;
+    font-size: 1.6rem;
+    line-height: 1.9rem;
+  }
+}
+
+.big {
+  padding-top: 1.8rem;
+  padding-bottom: 1.8rem;
+  font-size: 2rem;
+  line-height: 2.4rem;
+  font-weight: 500;
+
+  @include media('>=xs') {
+    width: auto;
+    font-size: 2.2rem;
+    line-height: 2.7rem;
+  }
+}
+
+.social {
+  width: 100%;
+  max-width: 9.6rem;
+  padding: 0.6rem 1.6rem;
+  background-color: v.$white;
+  border: 0.1rem solid rgba(89, 112, 255, 0.51);
+  border-radius: 0.3rem;
+
+  & > svg {
+    height: 1.7rem;
+  }
+}
+
+.primary {
+  color: v.$primary-btn-text-color;
+  background-color: v.$primary-btn-bg-color;
+
+  &:visited,
+  &:hover,
+  &:focus,
+  &:active {
+    color: v.$primary-btn-text-color;
+  }
+}
+
+.secondary {
+  color: v.$secondary-btn-text-color;
+  background-color: v.$secondary-btn-bg-color;
+
+  &:visited,
+  &:hover,
+  &:focus,
+  &:active {
+    color: v.$secondary-btn-text-color;
+  }
+}

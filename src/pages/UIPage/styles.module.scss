@@ -1,0 +1,9 @@
+@use '../../scss/placeholders';
+
+.row {
+  @extend %row;
+}
+
+.column {
+  @extend %column;
+}

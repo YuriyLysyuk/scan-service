@@ -1,0 +1,28 @@
+@use '../../scss/variables' as v;
+@use '../../scss/include-media' as *;
+
+.info {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  text-align: right;
+  color: v.$inverted-text-color;
+}
+
+.contacts {
+  font-size: 1.4rem;
+  line-height: 1.7rem;
+
+  a {
+    color: v.$inverted-text-color;
+
+    &:hover {
+      opacity: 0.5;
+    }
+  }
+}
+
+.copyright {
+  font-size: 1.2rem;
+  line-height: 1.5rem;
+}
