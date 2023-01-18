@@ -37,10 +37,26 @@
   @extend %section-padding;
 
   &__slider {
-    margin-top: 3rem;
+    margin-top: 1.5rem;
 
     @include media('>=#{v.$mobile-menu-breakpoint}') {
-      margin-top: 7rem;
+      margin-top: 5rem;
+    }
+  }
+
+  &__bg {
+    margin-top: 6.5rem;
+    padding-top: 87.6082632%;
+    background-image: url(../../assets/images/man-on-bench.svg);
+    background-repeat: no-repeat;
+    background-size: 200%;
+    background-position: center left;
+
+    @include media('>=#{v.$mobile-menu-breakpoint}') {
+      margin-top: 5.5rem;
+      padding-top: 43.8041316%;
+      background-size: contain;
+      background-position: center center;
     }
   }
 }

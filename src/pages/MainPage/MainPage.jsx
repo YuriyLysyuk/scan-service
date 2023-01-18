@@ -42,6 +42,8 @@ const MainPage = () => {
         <h2 className={styles.whywe__title}>Почему именно мы</h2>
 
         <MainSlider className={styles.whywe__slider} />
+
+        <div className={styles.whywe__bg}></div>
       </section>
     </MainLayout>
   );
