@@ -3,7 +3,7 @@ import React from 'react';
 import styles from './styles.module.scss';
 
 // ToDO авторизация
-import { IS_AUTORIZED, TARIFFS } from '../../constants';
+import { IS_AUTORIZED, TARIFFS, MAIN_SLIDES } from '../../constants';
 import MainLayout from '../../layouts/MainLayout/MainLayout';
 import Button from '../../components/Button/Button';
 import MainSlider from '../../components/MainSlider/MainSlider';
@@ -39,7 +39,7 @@ const MainPage = () => {
       <section className={styles.whywe}>
         <h2>Почему именно мы</h2>
 
-        <MainSlider className={styles.whywe__slider} />
+        <MainSlider className={styles.whywe__slider} slides={MAIN_SLIDES} />
 
         <div className={styles.whywe__bg}></div>
       </section>
