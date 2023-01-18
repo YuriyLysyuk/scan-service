@@ -1,5 +1,4 @@
 import React from 'react';
-import classNames from 'classnames';
 
 import styles from './styles.module.scss';
 
@@ -9,7 +8,7 @@ import MainLayout from '../../layouts/MainLayout/MainLayout';
 import Button from '../../components/Button/Button';
 import MainSlider from '../../components/MainSlider/MainSlider';
 
-import imgSrcManDashboard from '../../assets/images/man-dashboard.jpg';
+import manDashboardSrc from '../../assets/images/man-dashboard.jpg';
 
 const MainPage = () => {
   return (
@@ -32,7 +31,11 @@ const MainPage = () => {
           )}
         </div>
 
-        <img className={styles.hero__img} src={imgSrcManDashboard} />
+        <img
+          className={styles.hero__img}
+          src={manDashboardSrc}
+          alt="Мужик нажимает кнопки"
+        />
       </section>
 
       <section className={styles.whywe}>

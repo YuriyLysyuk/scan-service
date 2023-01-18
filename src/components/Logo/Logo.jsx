@@ -3,8 +3,8 @@ import classNames from 'classnames';
 
 import styles from './styles.module.scss';
 
-import logoWhiteURL from '../../assets/images/logo-white.png';
-import logoGradientURL from '../../assets/images/logo-gradient.png';
+import logoWhiteSrc from '../../assets/images/logo-white.png';
+import logoGradientSrc from '../../assets/images/logo-gradient.png';
 
 const Logo = ({ extClass, color }) => {
   const logoClass = classNames(styles.logo, extClass);
@@ -13,12 +13,12 @@ const Logo = ({ extClass, color }) => {
 
   switch (color) {
     case 'white':
-      logoSrc = logoWhiteURL;
+      logoSrc = logoWhiteSrc;
       break;
 
     case 'gradient':
     default:
-      logoSrc = logoGradientURL;
+      logoSrc = logoGradientSrc;
       break;
   }
 

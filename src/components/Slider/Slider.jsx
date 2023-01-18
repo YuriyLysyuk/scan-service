@@ -3,21 +3,17 @@ import ReactSlick from 'react-slick';
 
 import styles from './styles.module.scss';
 
-import { ReactComponent as PrevArrowSVG } from '../../assets/images/prev.svg';
-import { ReactComponent as NextArrowSVG } from '../../assets/images/next.svg';
-import timeSvgSrc from '../../assets/images/time.svg';
-import magnifierSvgSrc from '../../assets/images/magnifier.svg';
-import shieldSvgSrc from '../../assets/images/shield.svg';
+import Icon from '../../components/Icon/Icon';
 
 const NextArrow = ({ currentSlide, slideCount, ...props }) => (
   <div {...props}>
-    <NextArrowSVG />
+    <Icon name="next-arrow" />
   </div>
 );
 
 const PrevArrow = ({ currentSlide, slideCount, ...props }) => (
   <div {...props}>
-    <PrevArrowSVG />
+    <Icon name="prev-arrow" />
   </div>
 );
 
@@ -33,7 +29,7 @@ const Slider = ({ className, settings }) => {
     <ReactSlick className={className} {...defaultSettings}>
       <div>
         <div className={styles.inner}>
-          <img className={styles.icon} src={timeSvgSrc} alt="Секундомер" />
+          <Icon className={styles.icon} name="stopwatch" />
 
           <p className={styles.text}>
             Высокая и оперативная скорость обработки заявки
@@ -43,7 +39,7 @@ const Slider = ({ className, settings }) => {
 
       <div>
         <div className={styles.inner}>
-          <img className={styles.icon} src={magnifierSvgSrc} alt="Лупа" />
+          <Icon className={styles.icon} name="magnifier" />
 
           <p className={styles.text}>
             Огромная комплексная база данных, обеспечивающая объективный ответ
@@ -54,7 +50,7 @@ const Slider = ({ className, settings }) => {
 
       <div>
         <div className={styles.inner}>
-          <img className={styles.icon} src={shieldSvgSrc} alt="Щит" />
+          <Icon className={styles.icon} name="shield" />
 
           <p className={styles.text}>
             Защита конфеденциальных сведений, не подлежащих разглашению по
@@ -65,7 +61,7 @@ const Slider = ({ className, settings }) => {
 
       <div>
         <div className={styles.inner}>
-          <img className={styles.icon} src={magnifierSvgSrc} alt="Лупа" />
+          <Icon className={styles.icon} name="magnifier" />
 
           <p className={styles.text}>
             Лучший продукт на рынке по мнению бабы Клавы
