@@ -3,65 +3,10 @@
  */
 
 @use 'slick-carousel/slick/slick.scss';
+
 @use './variables' as v;
-@use './placeholders';
-@use './include-media' as *;
 
 @forward 'slick-carousel/slick/slick-theme.scss' with (
   $slick-arrow-color: v.$dark,
   $slick-font-family: none
 );
-
-.slick-list {
-  margin-left: 1rem;
-  margin-right: 1rem;
-
-  @include media('>=#{v.$mobile-menu-breakpoint}') {
-    margin-left: 3.5rem;
-    margin-right: 3.5rem;
-  }
-}
-
-.slick-prev,
-.slick-next {
-  width: 2.6rem;
-  height: auto;
-  opacity: 0.4;
-  @extend %transition;
-
-  &:hover {
-    opacity: 1;
-  }
-
-  &:before {
-    content: '';
-  }
-}
-
-.slick-prev {
-  left: -1rem;
-
-  @include media('>=#{v.$mobile-menu-breakpoint}') {
-    left: 0;
-  }
-}
-
-.slick-next {
-  right: -1rem;
-  @include media('>=#{v.$mobile-menu-breakpoint}') {
-    right: 0;
-  }
-}
-
-.slick-track {
-  display: flex;
-}
-
-.slick-slide {
-  display: flex !important;
-  height: auto;
-}
-
-.slick-slide div {
-  display: flex !important;
-}
