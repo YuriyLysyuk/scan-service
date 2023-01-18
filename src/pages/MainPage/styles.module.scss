@@ -60,3 +60,15 @@
     }
   }
 }
+
+.tariff {
+  @extend %section-padding;
+
+  &__list {
+    margin-top: 3.5rem;
+
+    @include media('>=#{v.$mobile-menu-breakpoint}') {
+      margin-top: 7rem;
+    }
+  }
+}

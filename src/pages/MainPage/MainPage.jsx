@@ -7,8 +7,8 @@ import { IS_AUTORIZED } from '../../constants';
 import MainLayout from '../../layouts/MainLayout/MainLayout';
 import Button from '../../components/Button/Button';
 import MainSlider from '../../components/MainSlider/MainSlider';
-
 import manDashboardSrc from '../../assets/images/man-dashboard.jpg';
+import TariffList from '../../components/TariffList/TariffList';
 
 const MainPage = () => {
   return (
@@ -42,6 +42,12 @@ const MainPage = () => {
         <MainSlider className={styles.whywe__slider} />
 
         <div className={styles.whywe__bg}></div>
+      </section>
+
+      <section className={styles.tariff}>
+        <h2>Тарифы</h2>
+
+        <TariffList className={styles.tariff__list} tariffs={TARIFFS} />
       </section>
     </MainLayout>
   );
