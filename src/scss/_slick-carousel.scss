@@ -5,6 +5,7 @@
 @use 'slick-carousel/slick/slick.scss';
 @use './variables' as v;
 @use './placeholders';
+@use './include-media' as *;
 
 @forward 'slick-carousel/slick/slick-theme.scss' with (
   $slick-arrow-color: v.$dark,
@@ -12,8 +13,13 @@
 );
 
 .slick-list {
-  margin-left: 3.5rem;
-  margin-right: 3.5rem;
+  margin-left: 1rem;
+  margin-right: 1rem;
+
+  @include media('>=#{v.$mobile-menu-breakpoint}') {
+    margin-left: 3.5rem;
+    margin-right: 3.5rem;
+  }
 }
 
 .slick-prev,
@@ -33,11 +39,18 @@
 }
 
 .slick-prev {
-  left: 0;
+  left: -1rem;
+
+  @include media('>=#{v.$mobile-menu-breakpoint}') {
+    left: 0;
+  }
 }
 
 .slick-next {
-  right: 0;
+  right: -1rem;
+  @include media('>=#{v.$mobile-menu-breakpoint}') {
+    right: 0;
+  }
 }
 
 .slick-track {
