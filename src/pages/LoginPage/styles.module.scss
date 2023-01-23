@@ -1,0 +1,40 @@
+@use '../../scss/placeholders';
+@use '../../scss/typography';
+@use '../../scss/variables' as v;
+@use '../../scss/include-media' as *;
+
+.hero {
+  display: grid;
+  grid-template-columns: 1fr;
+  justify-items: start;
+  align-items: start;
+  gap: v.$gap;
+  max-width: v.$container-max-width;
+  margin: 0 auto;
+  @extend %section-padding;
+
+  @include media('>=#{v.$mobile-menu-breakpoint}') {
+    grid-template-columns: 2fr 1fr;
+  }
+
+  &__title {
+    @extend %h3;
+    order: 1;
+  }
+
+  &__img {
+    width: 100%;
+    max-width: 32rem;
+    height: auto;
+    margin-top: v.$margin;
+    order: 3;
+
+    @include media('>=#{v.$mobile-menu-breakpoint}') {
+      margin-left: 11rem;
+    }
+  }
+
+  &__form {
+    order: 2;
+  }
+}
