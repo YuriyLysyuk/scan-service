@@ -1,0 +1,27 @@
+@use '../../scss/placeholders';
+@use '../../scss/typography';
+@use '../../scss/variables' as v;
+@use '../../scss/include-media' as *;
+
+.wrap {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  max-width: 43rem;
+  padding: 2.5rem;
+  background: v.$light;
+  box-shadow: 0px 0px 2rem rgba(0, 0, 0, 0.15);
+  border-radius: 1rem;
+}
+
+.tabs {
+  display: flex;
+}
+
+.tab {
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+}
