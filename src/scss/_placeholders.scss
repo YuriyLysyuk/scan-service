@@ -12,7 +12,7 @@
   align-items: flex-start;
   gap: 2rem;
   width: 100%;
-  max-width: 136rem;
+  max-width: v.$container-max-width;
   margin: 0 auto;
   padding: 2rem;
 }
