@@ -5,18 +5,24 @@ import styles from './styles.module.scss';
 
 const cx = classNames.bind(styles);
 
-const Button = ({ color, size, disabled, href, extClass, children }) => {
-  const btnClass = cx({
+const Button = ({ color, size, disabled, href, type, className, children }) => {
+  const buttonClass = cx({
     btn: true,
     [`${color}`]: color,
     [`${size}`]: size,
-    [`${extClass}`]: extClass,
+    [`${className}`]: className,
   });
 
   const ButtonTag = Boolean(href) ? 'a' : 'button';
+  const buttonType = Boolean(type) ? { type } : {};
 
   return (
-    <ButtonTag className={btnClass} href={href} disabled={disabled}>
+    <ButtonTag
+      className={buttonClass}
+      href={href}
+      disabled={disabled}
+      {...buttonType}
+    >
       {children}
     </ButtonTag>
   );
