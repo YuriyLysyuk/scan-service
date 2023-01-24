@@ -16,13 +16,26 @@ const LoginForm = ({ className }) => {
   return (
     <div className={wrapClass}>
       <div className={styles.tabs}>
-        <a className={styles.tab} href="#">
+        <input
+          className={styles.tab__radio}
+          id="login"
+          type="radio"
+          name="login_tab"
+          checked
+        />
+        <label className={styles.tab} htmlFor="login">
           Войти
-        </a>
+        </label>
 
-        <a className={styles.tab} href="#">
+        <input
+          className={styles.tab__radio}
+          id="signup"
+          type="radio"
+          name="login_tab"
+        />
+        <label className={styles.tab} htmlFor="signup">
           Зарегистироваться
-        </a>
+        </label>
       </div>
 
       <Formik
@@ -36,13 +49,29 @@ const LoginForm = ({ className }) => {
         }}
       >
         <Form className={styles.form}>
-          <label htmlFor="tel">Логин или номер телефона:</label>
-          <Field id="tel" name="tel" type="tel" />
+          <label className={styles.label} htmlFor="tel">
+            Логин или номер телефона:
+          </label>
+          <Field className={styles.input} id="tel" name="tel" type="tel" />
 
-          <label htmlFor="password">Пароль:</label>
-          <Field id="password" name="password" type="password" />
+          <label className={styles.label} htmlFor="password">
+            Пароль:
+          </label>
+          <Field
+            className={styles.input}
+            id="password"
+            name="password"
+            type="password"
+          />
 
-          <button type="submit">Войти</button>
+          <Button
+            className={styles.submit}
+            type="submit"
+            color="primary"
+            disabled
+          >
+            Войти
+          </Button>
         </Form>
       </Formik>
 
