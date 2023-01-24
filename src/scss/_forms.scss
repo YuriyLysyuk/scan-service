@@ -1,0 +1,32 @@
+@use './variables' as v;
+@use './include-media' as *;
+
+%label {
+  font-size: 1.4rem;
+  line-height: 1.7rem;
+  color: #949494;
+
+  @include media('>=#{v.$mobile-menu-breakpoint}') {
+    font-size: 1.6rem;
+    line-height: 1.9rem;
+  }
+}
+
+%input {
+  padding: 1.2rem 1.9rem;
+  font-size: 1.6rem;
+  line-height: 1.9rem;
+  color: v.$black;
+  background-color: v.$white;
+  border: 0.1rem solid #c7c7c7;
+  box-shadow: 0 0 2rem rgba(0, 0, 0, 0.05);
+  border-radius: v.$bd-radius;
+}
+
+%label + %input {
+  margin-top: 1.5rem;
+}
+
+%input + %label {
+  margin-top: 2rem;
+}
