@@ -12,11 +12,14 @@
   .row {
     justify-content: center;
     align-items: flex-start;
-    padding-top: 2.5rem;
-    padding-bottom: 2.5rem;
 
-    @include media('>=xs') {
+    @include media('>=xxs') {
       justify-content: space-between;
+      padding-top: 2.5rem;
+      padding-bottom: 2.5rem;
+    }
+
+    @include media('>=#{v.$mobile-menu-breakpoint}') {
       align-items: center;
     }
   }
