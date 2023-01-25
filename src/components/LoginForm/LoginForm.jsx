@@ -24,7 +24,7 @@ const LoginForm = ({ className }) => {
       validationSchema={validationSchema}
       onSubmit={handleOnSubmit}
     >
-      {({ dirty, isValid }) => (
+      {({ dirty, isValid, isSubmitting }) => (
         <Form className={formClass}>
           <TextInput label="Логин или номер телефона:" name="tel" type="tel" />
 
@@ -34,7 +34,7 @@ const LoginForm = ({ className }) => {
             className={styles.submit}
             type="submit"
             color="primary"
-            disabled={!dirty || !isValid}
+            disabled={!dirty || !isValid || isSubmitting}
           >
             Войти
           </Button>
