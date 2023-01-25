@@ -1,4 +1,4 @@
 export const initialValues = {
-  tel: '',
+  phone: '',
   password: '',
 };
