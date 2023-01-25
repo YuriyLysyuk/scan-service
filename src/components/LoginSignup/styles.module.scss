@@ -1,0 +1,121 @@
+@use '../../scss/placeholders';
+@use '../../scss/variables' as v;
+@use '../../scss/forms';
+@use '../../scss/include-media' as *;
+
+.wrap {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  max-width: 43rem;
+  margin-top: 10.6rem;
+  padding: 2.5rem 1.5rem 2rem;
+  background: v.$light;
+  box-shadow: 0px 0px 2rem rgba(0, 0, 0, 0.15);
+  border-radius: 1rem;
+
+  @include media('>=#{v.$mobile-menu-breakpoint}') {
+    margin-top: 1rem;
+    padding: 2.5rem 2.5rem 3.9rem;
+  }
+
+  &:before {
+    content: '';
+    position: absolute;
+    top: -7.5rem;
+    left: 30%;
+    width: 7.2rem;
+    height: 9.2rem;
+    background-image: url('../../assets/images/lock.svg');
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+
+    @include media('>=#{v.$mobile-menu-breakpoint}') {
+      top: -5.5rem;
+      left: -4.5rem;
+    }
+  }
+}
+
+.tabs {
+  display: flex;
+  margin-bottom: 4rem;
+}
+
+.tab {
+  width: 100%;
+  padding-left: 1.5rem;
+  padding-right: 1.5rem;
+  padding-bottom: 1rem;
+  font-size: 1.4rem;
+  line-height: 1.7rem;
+  text-align: center;
+  border-bottom: 0.2rem solid #c7c7c7;
+  @extend %transition;
+
+  @include media('>=#{v.$mobile-menu-breakpoint}') {
+    padding-left: 2rem;
+    padding-right: 2rem;
+    font-size: 1.6rem;
+    line-height: 1.9rem;
+  }
+
+  &:not(:first-of-type) {
+    margin-left: 1.5rem;
+  }
+
+  &__radio {
+    display: none;
+  }
+
+  &:hover,
+  &__radio:checked + & {
+    color: v.$accent-2;
+    border-bottom-color: v.$accent-2;
+    cursor: pointer;
+  }
+}
+
+.form {
+  margin-bottom: 1.5rem;
+}
+
+.restore {
+  margin-bottom: 3rem;
+  font-size: 1.4rem;
+  line-height: 1.7rem;
+  text-decoration-line: underline;
+  color: v.$primary;
+  text-align: center;
+
+  &:hover {
+    color: v.$primary;
+    text-decoration-line: none;
+  }
+}
+
+.text {
+  @extend %label;
+}
+
+.socials {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-start;
+
+  @include media('>=#{v.$mobile-menu-breakpoint}') {
+    flex-wrap: nowrap;
+  }
+
+  & > *:not(:last-child) {
+    margin-right: 0.8rem;
+    margin-bottom: 1rem;
+
+    @include media('>=#{v.$mobile-menu-breakpoint}') {
+      margin-right: 1rem;
+      margin-bottom: 0;
+    }
+  }
+}
