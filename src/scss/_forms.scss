@@ -1,7 +1,15 @@
 @use './variables' as v;
 @use './include-media' as *;
 
+%input-group {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 2rem;
+}
+
 %label {
+  padding-bottom: 1.5rem;
   font-size: 1.4rem;
   line-height: 1.7rem;
   color: #949494;
@@ -12,7 +20,7 @@
   }
 }
 
-%input {
+%text-input {
   padding: 1.2rem 1.9rem;
   font-size: 1.6rem;
   line-height: 1.9rem;
@@ -23,10 +31,20 @@
   border-radius: v.$bd-radius;
 }
 
-%label + %input {
-  margin-top: 1.5rem;
-}
+%error {
+  color: v.$danger;
 
-%input + %label {
-  margin-top: 2rem;
+  %text-input {
+    color: v.$danger;
+    border-color: v.$danger;
+  }
+
+  &-message {
+    position: absolute;
+    top: calc(100% + 0.6rem);
+    width: 100%;
+    font-size: 1.4rem;
+    line-height: 1.7rem;
+    text-align: center;
+  }
 }

@@ -1,10 +1,12 @@
 import React from 'react';
-import { Formik, Field, Form } from 'formik';
+import { Formik, Form } from 'formik';
 import classNames from 'classnames';
+import * as Yup from 'yup';
 
 import styles from './styles.module.scss';
 
 import Button from '../Button/Button';
+import TextInput from '../TextInput/TextInput';
 
 import { ReactComponent as GoogleSVG } from '../../assets/images/google.svg';
 import { ReactComponent as FacebookSVG } from '../../assets/images/facebook.svg';
@@ -21,7 +23,7 @@ const LoginForm = ({ className }) => {
           id="login"
           type="radio"
           name="login_tab"
-          checked
+          defaultChecked
         />
         <label className={styles.tab} htmlFor="login">
           Войти
@@ -40,39 +42,38 @@ const LoginForm = ({ className }) => {
 
       <Formik
         initialValues={{
-          phone: '',
+          tel: '',
           password: '',
         }}
+        validationSchema={Yup.object({
+          tel: Yup.string().required('Введите логин или номер телефона'),
+          password: Yup.string().required('Введите пароль'),
+        })}
         onSubmit={async (values) => {
           await new Promise((r) => setTimeout(r, 500));
           alert(JSON.stringify(values, null, 2));
         }}
       >
-        <Form className={styles.form}>
-          <label className={styles.label} htmlFor="tel">
-            Логин или номер телефона:
-          </label>
-          <Field className={styles.input} id="tel" name="tel" type="tel" />
+        {({ dirty, isValid }) => (
+          <Form className={styles.form}>
+            <TextInput
+              label="Логин или номер телефона:"
+              name="tel"
+              type="tel"
+            />
 
-          <label className={styles.label} htmlFor="password">
-            Пароль:
-          </label>
-          <Field
-            className={styles.input}
-            id="password"
-            name="password"
-            type="password"
-          />
+            <TextInput label="Пароль:" name="password" type="password" />
 
-          <Button
-            className={styles.submit}
-            type="submit"
-            color="primary"
-            disabled
-          >
-            Войти
-          </Button>
-        </Form>
+            <Button
+              className={styles.submit}
+              type="submit"
+              color="primary"
+              disabled={!dirty || !isValid}
+            >
+              Войти
+            </Button>
+          </Form>
+        )}
       </Formik>
 
       <a className={styles.restore} href="#">
