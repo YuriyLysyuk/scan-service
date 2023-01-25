@@ -34,7 +34,7 @@ const LoginSignup = ({ className }) => {
           name="login_tab"
         />
         <label className={styles.tab} htmlFor="signup">
-          Зарегистироваться
+          Зарегистрироваться
         </label>
       </div>
 
