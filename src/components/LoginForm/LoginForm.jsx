@@ -26,9 +26,19 @@ const LoginForm = ({ className }) => {
     >
       {({ dirty, isValid, isSubmitting }) => (
         <Form className={formClass}>
-          <TextInput label="Логин или номер телефона:" name="phone" type="tel" />
+          <TextInput
+            label="Номер телефона:"
+            id="phone"
+            name="phone"
+            type="tel"
+          />
 
-          <TextInput label="Пароль:" name="password" type="password" />
+          <TextInput
+            label="Пароль:"
+            id="password"
+            name="password"
+            type="password"
+          />
 
           <Button
             className={styles.submit}
