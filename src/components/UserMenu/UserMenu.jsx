@@ -6,11 +6,6 @@ import styles from './styles.module.scss';
 import Button from '../Button/Button';
 
 // ToDo авторизация
-import { IS_AUTORIZED } from '../../constants';
-const user = {
-  name: 'Алексей А.',
-  avatar: 'https://randomuser.me/api/portraits/men/79.jpg',
-};
 
 const UserMenu = ({ extClass }) => {
   const unauthorizedClass = classNames(styles.unauthorized, extClass);
