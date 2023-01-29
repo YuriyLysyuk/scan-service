@@ -2,7 +2,7 @@ import React from 'react';
 import { Provider } from 'react-redux';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 
-import { LOGIN_URL } from './constants';
+import { HOME_URL, LOGIN_URL } from './constants';
 import { store } from './redux/store';
 import UIPage from './pages/UIPage/UIPage';
 import MainPage from './pages/MainPage/MainPage';
@@ -13,7 +13,7 @@ const App = () => {
     <Provider store={store}>
       <BrowserRouter>
         <Routes>
-          <Route index path="/" element={<MainPage />} />
+          <Route index path={HOME_URL} element={<MainPage />} />
 
           <Route path={LOGIN_URL} element={<LoginPage />} />
         </Routes>
