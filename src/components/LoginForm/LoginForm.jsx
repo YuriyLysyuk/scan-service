@@ -26,12 +26,7 @@ const LoginForm = ({ className }) => {
     >
       {({ dirty, isValid, isSubmitting }) => (
         <Form className={formClass}>
-          <TextInput
-            label="Номер телефона:"
-            id="phone"
-            name="phone"
-            type="tel"
-          />
+          <TextInput label="Логин:" id="login" name="login" />
 
           <TextInput
             label="Пароль:"

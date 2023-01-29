@@ -7,6 +7,7 @@ const validationSchema = Yup.object({
       'Введите корректный номер телефона'
     )
     .required('Введите номер телефона'),
+  login: Yup.string().required('Введите логин'),
   password: Yup.string().required('Введите пароль'),
 });
 
