@@ -15,16 +15,14 @@ const MainLayout = ({ children }) => {
         <Navbar />
       </header>
 
-      <main>{children}</main>
+      <main className={styles.main}>{children}</main>
 
       <footer className={styles.footer}>
-        <div className={styles.row}>
-          <Link to={HOME_URL}>
-            <Logo color="white" />
-          </Link>
+        <Link to={HOME_URL}>
+          <Logo color="white" />
+        </Link>
 
-          <FooterInfo />
-        </div>
+        <FooterInfo />
       </footer>
     </>
   );

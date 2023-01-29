@@ -2,25 +2,24 @@
 @use '../../scss/variables' as v;
 @use '../../scss/include-media' as *;
 
-.row {
-  @extend %row;
+.main {
+  flex-grow: 1;
 }
 
 .footer {
   background-color: v.$accent-2;
 
-  .row {
-    justify-content: center;
-    align-items: flex-start;
+  @extend %row;
+  justify-content: center;
+  align-items: flex-start;
 
-    @include media('>=xxs') {
-      justify-content: space-between;
-      padding-top: 2.5rem;
-      padding-bottom: 2.5rem;
-    }
+  @include media('>=xxs') {
+    justify-content: space-between;
+    padding-top: 2.5rem;
+    padding-bottom: 2.5rem;
+  }
 
-    @include media('>=#{v.$mobile-menu-breakpoint}') {
-      align-items: center;
-    }
+  @include media('>=#{v.$mobile-menu-breakpoint}') {
+    align-items: center;
   }
 }
