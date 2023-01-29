@@ -1,14 +1,16 @@
 import { configureStore } from '@reduxjs/toolkit';
 
-import { scanAPI } from './api/scanAPI';
+import { accountAPI } from './api/accountAPI';
+import accountReducer from './features/accountSlice';
 
 export const store = configureStore({
   reducer: {
-    [scanAPI.reducerPath]: scanAPI.reducer,
+    [accountAPI.reducerPath]: accountAPI.reducer,
+    accountState: accountReducer,
   },
 
   devTools: process.env.NODE_ENV === 'development',
 
   middleware: (getDefaultMiddleware) =>
-    getDefaultMiddleware().concat(scanAPI.middleware),
+    getDefaultMiddleware().concat(accountAPI.middleware),
 });
