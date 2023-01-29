@@ -5,7 +5,16 @@ import styles from './styles.module.scss';
 
 const cx = classNames.bind(styles);
 
-const Button = ({ color, size, disabled, href, type, className, children }) => {
+const Button = ({
+  color,
+  size,
+  disabled,
+  href,
+  type,
+  className,
+  children,
+  onClick,
+}) => {
   const buttonClass = cx({
     btn: true,
     [`${color}`]: color,
@@ -22,6 +31,7 @@ const Button = ({ color, size, disabled, href, type, className, children }) => {
       href={href}
       disabled={disabled}
       {...buttonType}
+      onClick={onClick}
     >
       {children}
     </ButtonTag>
