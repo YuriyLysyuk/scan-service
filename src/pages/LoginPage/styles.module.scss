@@ -7,8 +7,7 @@
   display: grid;
   grid-template-columns: 1fr;
   gap: v.$gap;
-  max-width: v.$container-max-width;
-  margin: 0 auto;
+  @extend %container;
   @extend %section-padding;
 
   @include media('>=#{v.$mobile-menu-breakpoint}') {

@@ -8,6 +8,7 @@
   justify-items: start;
   align-items: start;
   gap: v.$gap;
+  @extend %container;
   @extend %section-padding;
 
   @include media('>=#{v.$mobile-menu-breakpoint}') {
@@ -34,6 +35,7 @@
 }
 
 .whywe {
+  @extend %container;
   @extend %section-padding;
 
   &__slider {
@@ -62,6 +64,7 @@
 }
 
 .tariff {
+  @extend %container;
   @extend %section-padding;
 
   &__list {
