@@ -41,6 +41,13 @@
   }
 }
 
+.title {
+  font-family: v.$font-family;
+  font-weight: 500;
+  font-size: 3rem;
+  line-height: 3.6rem;
+}
+
 .body {
   position: relative;
   display: flex;

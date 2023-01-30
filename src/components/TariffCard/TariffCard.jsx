@@ -34,7 +34,7 @@ const TariffCard = ({
   return (
     <div className={cardClass}>
       <header className={styles.header}>
-        {Boolean(name) && <h3>{name}</h3>}
+        {Boolean(name) && <h3 className={styles.title}>{name}</h3>}
 
         {Boolean(description) && <p>{description}</p>}
       </header>
