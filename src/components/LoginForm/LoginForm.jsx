@@ -11,26 +11,33 @@ import Button from '../Button/Button';
 
 import { HOME_URL } from '../../constants';
 import validationSchema from '../../utils/validationSchema';
-import { useAccountLoginMutation } from '../../redux/api/accountAPI';
+import { useLoginMutation } from '../../redux/api/scan';
 
 const LoginForm = ({ className }) => {
-  const [accountLogin, { isLoading, isError, error, isSuccess }] =
-    useAccountLoginMutation();
+  const [
+    login,
+    {
+      isLoading: isLoginLoading,
+      isError: isLoginError,
+      error: loginError,
+      isSuccess: isLoginSuccess,
+    },
+  ] = useLoginMutation();
 
   const navigate = useNavigate();
 
   useEffect(() => {
-    if (isSuccess) {
+    if (isLoginSuccess) {
       navigate(HOME_URL);
     }
 
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [isLoading]);
+  }, [isLoginLoading]);
 
   const formClass = classNames(styles.form, className);
 
   const handleOnSubmit = (values, { setSubmitting }) => {
-    accountLogin(values).then(() => {
+    login(values).then(() => {
       setSubmitting(false);
     });
   };
@@ -61,8 +68,8 @@ const LoginForm = ({ className }) => {
             Войти
           </Button>
 
-          {isError && (
-            <div className={styles.errorMessage}>{error.data.message}</div>
+          {isLoginError && (
+            <div className={styles.errorMessage}>{loginError.data.message}</div>
           )}
         </Form>
       )}
