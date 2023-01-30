@@ -8,9 +8,12 @@ import UserMenu from '../UserMenu/UserMenu';
 import Limits from '../Limits/Limits';
 
 import { HOME_URL, MENU } from '../../constants';
+import { useAuth } from '../../hooks/useAuth';
 import Logo from '../../components/Logo/Logo';
 
 const Navbar = () => {
+  const { isLoggedIn } = useAuth();
+
   return (
     <div className={styles.navbar}>
       <Link to={HOME_URL}>
@@ -25,7 +28,7 @@ const Navbar = () => {
 
       <Menu extClass={styles.menu} menu={MENU} />
 
-      <Limits />
+      {isLoggedIn && <Limits />}
 
       <UserMenu extClass={styles.user} />
 

@@ -4,6 +4,7 @@ import storage from 'redux-persist/lib/storage';
 
 import { scanApi } from './api/scan';
 import authReducer from './slices/authSlice';
+import accountReducer from './slices/accountSlice';
 
 const persistConfig = {
   key: 'auth',
@@ -16,6 +17,7 @@ export const store = configureStore({
   reducer: {
     [scanApi.reducerPath]: scanApi.reducer,
     auth: persistedAuthReducer,
+    account: accountReducer,
   },
 
   middleware: (getDefaultMiddleware) =>

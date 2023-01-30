@@ -1,6 +1,7 @@
 import { createApi, fetchBaseQuery } from '@reduxjs/toolkit/query/react';
 import { API_BASE_URL } from '../../constants';
 import { setCredentials } from '../slices/authSlice';
+import { setAccountInfo } from '../slices/accountSlice';
 
 export const scanApi = createApi({
   reducerPath: 'scanApi',
@@ -34,8 +35,6 @@ export const scanApi = createApi({
           const { data } = await queryFulfilled;
 
           dispatch(setCredentials(data));
-
-          await dispatch(scanApi.endpoints.getAccountInfo.initiate(null));
         } catch (error) {}
       },
     }),
@@ -45,15 +44,15 @@ export const scanApi = createApi({
         url: '/account/info',
       }),
 
-      // transformResponse: (result) => result.data.user,
+      transformResponse: (result) => result.eventFiltersInfo,
 
-      // async onQueryStarted(args, { dispatch, queryFulfilled }) {
-      //   try {
-      //     const { data } = await queryFulfilled;
+      async onQueryStarted(args, { dispatch, queryFulfilled }) {
+        try {
+          const { data } = await queryFulfilled;
 
-      //     dispatch(setAccount(data));
-      //   } catch (error) {}
-      // },
+          dispatch(setAccountInfo(data));
+        } catch (error) {}
+      },
     }),
   }),
 });

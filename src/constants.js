@@ -5,12 +5,6 @@ export const API_BASE_URL = 'https://gateway.scan-interfax.ru/api/v1';
 export const HOME_URL = '/';
 export const LOGIN_URL = '/login';
 
-export const IS_AUTORIZED = false;
-export const USER = {
-  name: 'Алексей А.',
-  avatar: 'https://randomuser.me/api/portraits/men/79.jpg',
-};
-
 // Content
 export const CONTACTS = {
   address: 'г. Москва, Цветной б-р, 40',
