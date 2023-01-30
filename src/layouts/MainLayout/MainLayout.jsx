@@ -18,11 +18,13 @@ const MainLayout = ({ children }) => {
       <main className={styles.main}>{children}</main>
 
       <footer className={styles.footer}>
-        <Link to={HOME_URL}>
-          <Logo color="white" />
-        </Link>
+        <div className={styles.row}>
+          <Link to={HOME_URL}>
+            <Logo color="white" />
+          </Link>
 
-        <FooterInfo />
+          <FooterInfo />
+        </div>
       </footer>
     </>
   );
