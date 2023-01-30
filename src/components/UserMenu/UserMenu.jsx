@@ -1,48 +1,56 @@
 import React from 'react';
 import classNames from 'classnames';
 import { useNavigate } from 'react-router-dom';
+import { useDispatch } from 'react-redux';
 
 import styles from './styles.module.scss';
 
 import Button from '../Button/Button';
 
-// ToDo авторизация
-import { LOGIN_URL, IS_AUTORIZED, USER } from '../../constants';
+import { LOGIN_URL, HOME_URL } from '../../constants';
+import { useAuth } from '../../hooks/useAuth';
+import { logout } from '../../redux/features/authSlice';
 
 const UserMenu = ({ extClass }) => {
+  const auth = useAuth();
   const navigate = useNavigate();
-  const handleLogInClick = () => navigate(LOGIN_URL);
+  const dispatch = useDispatch();
+
+  const handleLoginClick = () => navigate(LOGIN_URL);
+
+  const handleLogoutClick = () => {
+    dispatch(logout());
+    navigate(HOME_URL);
+  };
 
   const unauthorizedClass = classNames(styles.unauthorized, extClass);
   const authorizedClass = classNames(styles.authorized, extClass);
 
-  return IS_AUTORIZED ? (
+  return auth.user ? (
     <div className={authorizedClass}>
       <div className={styles.info}>
-        <p className={styles.name}>{USER.name}</p>
+        <p className={styles.name}>{auth.user.name}</p>
 
-        <a className={styles.logout} href="#">
+        <button className={styles.logout} onClick={handleLogoutClick}>
           Выйти
-        </a>
+        </button>
       </div>
 
       <img
         className={styles.avatar}
-        src={USER.avatar}
-        alt={`Аватар ${USER.name}`}
+        src={auth.user.avatar}
+        alt={`Аватар ${auth.user.name}`}
       />
     </div>
   ) : (
     <div className={unauthorizedClass}>
-      <a className={styles.signup} href="#">
-        Зарегистрироваться
-      </a>
+      <button className={styles.signup}>Зарегистрироваться</button>
 
       <div className={styles.vr}></div>
 
       <Button
         extClass={styles.login}
-        onClick={handleLogInClick}
+        onClick={handleLoginClick}
         color="secondary"
         size="small"
       >
