@@ -15,33 +15,26 @@ export const accountAPI = createApi({
         url: 'login',
         method: 'POST',
         body: data,
-        credentials: 'include',
       }),
 
       async onQueryStarted(args, { dispatch, queryFulfilled }) {
         try {
           await queryFulfilled;
-          await dispatch(accountAPI.endpoints.accountLogout.initiate(null));
+          await dispatch(accountAPI.endpoints.accountInfo.initiate(null));
         } catch (error) {}
       },
     }),
 
     accountLogout: build.mutation({
-      query() {
-        return {
-          url: 'logout',
-          credentials: 'include',
-        };
-      },
+      query: () => ({
+        url: 'logout',
+      }),
     }),
 
     accountInfo: build.query({
-      query() {
-        return {
-          url: 'info',
-          credentials: 'include',
-        };
-      },
+      query: () => ({
+        url: 'info',
+      }),
 
       transformResponse: (result) => result.data.user,
 
