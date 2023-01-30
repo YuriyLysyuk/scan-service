@@ -1,6 +1,6 @@
 import { createApi, fetchBaseQuery } from '@reduxjs/toolkit/query/react';
 import { API_BASE_URL } from '../../constants';
-import { setCredentials } from '../features/authSlice';
+import { setCredentials } from '../slices/authSlice';
 
 export const scanApi = createApi({
   reducerPath: 'scanApi',

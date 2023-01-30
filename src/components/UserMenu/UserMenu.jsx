@@ -9,7 +9,7 @@ import Button from '../Button/Button';
 
 import { LOGIN_URL, HOME_URL } from '../../constants';
 import { useAuth } from '../../hooks/useAuth';
-import { logout } from '../../redux/features/authSlice';
+import { logout } from '../../redux/slices/authSlice';
 
 const UserMenu = ({ extClass }) => {
   const auth = useAuth();
