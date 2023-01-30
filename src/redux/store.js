@@ -19,7 +19,9 @@ export const store = configureStore({
   },
 
   middleware: (getDefaultMiddleware) =>
-    getDefaultMiddleware().concat(scanApi.middleware),
+    getDefaultMiddleware({
+      serializableCheck: false,
+    }).concat(scanApi.middleware),
 });
 
 export const persistor = persistStore(store);
