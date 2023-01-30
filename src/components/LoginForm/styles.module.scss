@@ -1,8 +1,19 @@
+@use '../../scss/forms';
+
 .form {
   display: flex;
   flex-direction: column;
 }
 
 .submit {
+  width: 100%;
   margin-top: 1rem;
+}
+
+.errorMessage {
+  @extend %error;
+  @extend %error-message;
+
+  position: unset;
+  margin-top: 0.3rem;
 }
