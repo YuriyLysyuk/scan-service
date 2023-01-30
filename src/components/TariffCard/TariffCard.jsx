@@ -6,6 +6,7 @@ import styles from './styles.module.scss';
 import Button from '../Button/Button';
 
 import { formatPrice } from '../../utils/helpers';
+import { useAuth } from '../../hooks/useAuth';
 
 const cx = classNames.bind(styles);
 
@@ -21,8 +22,8 @@ const TariffCard = ({
     includes,
   },
 }) => {
-  // ToDo получать из настроек пользователя
-  const isCurrent = 'beginner' === id;
+  const { user } = useAuth();
+  const isCurrent = user?.tariff === id;
 
   const cardClass = cx({
     card: true,
@@ -64,9 +65,7 @@ const TariffCard = ({
           </div>
         )}
 
-        {isCurrent && (
-          <Button href={readMoreLink}>Перейти в личный кабинет</Button>
-        )}
+        {isCurrent && <Button>Перейти в личный кабинет</Button>}
 
         {!isCurrent && (
           <Button href={readMoreLink} color="primary">

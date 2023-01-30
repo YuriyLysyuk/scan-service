@@ -20,6 +20,7 @@ export const slice = createSlice({
       state.user = {
         name: 'Алексей А.',
         avatar: 'https://randomuser.me/api/portraits/men/79.jpg',
+        tariff: 'beginner',
       };
       state.isLoggedIn = true;
     },
