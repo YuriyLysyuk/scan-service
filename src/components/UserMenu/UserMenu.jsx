@@ -12,7 +12,7 @@ import { useAuth } from '../../hooks/useAuth';
 import { logout } from '../../redux/slices/authSlice';
 
 const UserMenu = ({ extClass }) => {
-  const auth = useAuth();
+  const { isLoggedIn, user } = useAuth();
   const navigate = useNavigate();
   const dispatch = useDispatch();
 
@@ -26,10 +26,10 @@ const UserMenu = ({ extClass }) => {
   const unauthorizedClass = classNames(styles.unauthorized, extClass);
   const authorizedClass = classNames(styles.authorized, extClass);
 
-  return auth.user ? (
+  return isLoggedIn ? (
     <div className={authorizedClass}>
       <div className={styles.info}>
-        <p className={styles.name}>{auth.user.name}</p>
+        <p className={styles.name}>{user.name}</p>
 
         <button className={styles.logout} onClick={handleLogoutClick}>
           Выйти
@@ -38,8 +38,8 @@ const UserMenu = ({ extClass }) => {
 
       <img
         className={styles.avatar}
-        src={auth.user.avatar}
-        alt={`Аватар ${auth.user.name}`}
+        src={user.avatar}
+        alt={`Аватар ${user.name}`}
       />
     </div>
   ) : (

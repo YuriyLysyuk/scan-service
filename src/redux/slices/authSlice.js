@@ -4,6 +4,7 @@ const initialState = {
   accessToken: null,
   expire: null,
   user: null,
+  isLoggedIn: false,
 };
 
 export const slice = createSlice({
@@ -20,6 +21,7 @@ export const slice = createSlice({
         name: 'Алексей А.',
         avatar: 'https://randomuser.me/api/portraits/men/79.jpg',
       };
+      state.isLoggedIn = true;
     },
   },
 });
@@ -29,3 +31,4 @@ export const { logout, setCredentials } = slice.actions;
 export default slice.reducer;
 
 export const selectCurrentUser = (state) => state.auth.user;
+export const selectIsLoggedIn = (state) => state.auth.isLoggedIn;
