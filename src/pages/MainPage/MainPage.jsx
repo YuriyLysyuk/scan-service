@@ -2,8 +2,8 @@ import React from 'react';
 
 import styles from './styles.module.scss';
 
-// ToDO авторизация
-import { IS_AUTORIZED, TARIFFS, MAIN_SLIDES } from '../../constants';
+import { TARIFFS, MAIN_SLIDES } from '../../constants';
+import { useAuth } from '../../hooks/useAuth';
 import MainLayout from '../../layouts/MainLayout/MainLayout';
 import Button from '../../components/Button/Button';
 import MainSlider from '../../components/MainSlider/MainSlider';
@@ -11,6 +11,8 @@ import manDashboardSrc from '../../assets/images/man-dashboard.jpg';
 import TariffList from '../../components/TariffList/TariffList';
 
 const MainPage = () => {
+  const { isLoggedIn } = useAuth();
+
   return (
     <MainLayout>
       <section className={styles.hero}>
@@ -22,8 +24,8 @@ const MainPage = () => {
             электронную почту.
           </p>
 
-          {IS_AUTORIZED && (
-            <Button extClass={styles.hero__btn} href="#" color="primary">
+          {isLoggedIn && (
+            <Button className={styles.hero__btn} color="primary">
               Запросить данные
             </Button>
           )}
