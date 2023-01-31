@@ -10,6 +10,7 @@ import { logout } from './redux/slices/authSlice';
 import MainPage from './pages/MainPage/MainPage';
 import LoginPage from './pages/LoginPage/LoginPage';
 import SearchPage from './pages/SearchPage/SearchPage';
+import SearchResultPage from './pages/SearchResultPage/SearchResultPage';
 import NotFoundPage from './pages/NotFoundPage/NotFoundPage';
 
 const App = () => {
@@ -29,6 +30,7 @@ const App = () => {
 
       <Route path={SEARCH_URL} element={<RequireAuth />}>
         <Route index element={<SearchPage />} />
+        <Route path="result" element={<SearchResultPage />} />
       </Route>
 
       <Route path="*" element={<NotFoundPage />} />
