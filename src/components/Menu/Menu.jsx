@@ -1,5 +1,6 @@
 import React from 'react';
 import classNames from 'classnames';
+import { Link } from 'react-router-dom';
 
 import styles from './styles.module.scss';
 
@@ -10,9 +11,9 @@ const Menu = ({ menu, extClass }) => {
     Boolean(menu?.length) && (
       <nav className={menuClass}>
         {menu.map(({ link, title }) => (
-          <a className={styles.item} key={title} href={link}>
+          <Link className={styles.item} key={title} to={link}>
             {title}
-          </a>
+          </Link>
         ))}
       </nav>
     )
