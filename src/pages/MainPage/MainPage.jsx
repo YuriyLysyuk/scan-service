@@ -1,8 +1,9 @@
 import React from 'react';
+import { useNavigate } from 'react-router-dom';
 
 import styles from './styles.module.scss';
 
-import { TARIFFS, MAIN_SLIDES } from '../../constants';
+import { TARIFFS, MAIN_SLIDES, SEARCH_URL } from '../../constants';
 import { useAuth } from '../../hooks/useAuth';
 import MainLayout from '../../layouts/MainLayout/MainLayout';
 import Button from '../../components/Button/Button';
@@ -12,6 +13,7 @@ import TariffList from '../../components/TariffList/TariffList';
 
 const MainPage = () => {
   const { isLoggedIn } = useAuth();
+  const navigate = useNavigate();
 
   return (
     <MainLayout>
@@ -25,7 +27,11 @@ const MainPage = () => {
           </p>
 
           {isLoggedIn && (
-            <Button className={styles.hero__btn} color="primary">
+            <Button
+              className={styles.hero__btn}
+              color="primary"
+              onClick={() => navigate(SEARCH_URL)}
+            >
               Запросить данные
             </Button>
           )}
