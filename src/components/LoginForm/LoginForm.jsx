@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react';
 import { Formik, Form } from 'formik';
 import classNames from 'classnames';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, useLocation } from 'react-router-dom';
 
 import styles from './styles.module.scss';
 import { initialValues } from './params';
@@ -25,10 +25,13 @@ const LoginForm = ({ className }) => {
   ] = useLoginMutation();
 
   const navigate = useNavigate();
+  const location = useLocation();
+
+  const from = location.state?.from?.pathname || HOME_URL;
 
   useEffect(() => {
     if (isLoginSuccess) {
-      navigate(HOME_URL);
+      navigate(from);
     }
   }, [isLoginLoading]);
 
