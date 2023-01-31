@@ -33,3 +33,4 @@ export default slice.reducer;
 
 export const selectCurrentUser = (state) => state.auth.user;
 export const selectIsLoggedIn = (state) => state.auth.isLoggedIn;
+export const selectAccessTokenExpire = (state) => state.auth.expire;
