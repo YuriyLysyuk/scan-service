@@ -27,14 +27,9 @@ const App = () => {
       <Route index path={HOME_URL} element={<MainPage />} />
       <Route path={LOGIN_URL} element={<LoginPage />} />
 
-      <Route
-        path={SEARCH_URL}
-        element={
-          <RequireAuth>
-            <SearchPage />
-          </RequireAuth>
-        }
-      ></Route>
+      <Route path={SEARCH_URL} element={<RequireAuth />}>
+        <Route index element={<SearchPage />} />
+      </Route>
 
       <Route path="*" element={<NotFoundPage />} />
     </Routes>
