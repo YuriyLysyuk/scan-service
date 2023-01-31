@@ -16,8 +16,6 @@ const UserMenu = ({ extClass }) => {
   const navigate = useNavigate();
   const dispatch = useDispatch();
 
-  const handleLoginClick = () => navigate(LOGIN_URL);
-
   const handleLogoutClick = () => {
     dispatch(logout());
     navigate(HOME_URL);
@@ -50,7 +48,7 @@ const UserMenu = ({ extClass }) => {
 
       <Button
         extClass={styles.login}
-        onClick={handleLoginClick}
+        onClick={() => navigate(LOGIN_URL)}
         color="secondary"
         size="small"
       >
