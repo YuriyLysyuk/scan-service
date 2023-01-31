@@ -3,6 +3,8 @@
 @use '../../scss/include-media' as *;
 
 .main {
+  display: flex;
+  flex-direction: column;
   flex-grow: 1;
 }
 

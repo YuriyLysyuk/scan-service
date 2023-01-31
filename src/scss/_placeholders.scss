@@ -16,7 +16,6 @@
   flex-wrap: wrap;
   justify-content: flex-start;
   align-items: flex-start;
-  gap: 2rem;
   padding: 2rem;
   @extend %container;
 }
@@ -27,7 +26,6 @@
   flex-direction: column;
   justify-content: flex-start;
   align-items: flex-start;
-  gap: 2rem;
   padding: 2rem;
   @extend %container;
 }

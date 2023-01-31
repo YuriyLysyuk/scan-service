@@ -32,6 +32,7 @@ $danger: #ff5959;
 // Mixing colors
 $text-color: $dark;
 $inverted-text-color: $light;
+$link-color: $primary;
 
 $default-btn-text-color: $text-color;
 $default-btn-bg-color: $gray;
@@ -39,8 +40,6 @@ $primary-btn-text-color: $inverted-text-color;
 $primary-btn-bg-color: $primary;
 $secondary-btn-text-color: $text-color;
 $secondary-btn-bg-color: $secondary;
-
-
 
 // Blocks
 $container-max-width: 136rem;

@@ -103,7 +103,7 @@ textarea {
 }
 
 a {
-  color: v.$text-color;
+  color: v.$link-color;
   text-decoration: none;
 
   @extend %transition;
