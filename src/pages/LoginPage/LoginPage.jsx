@@ -7,6 +7,8 @@ import LoginSignup from '../../components/LoginSignup/LoginSignup';
 import { ReactComponent as PeopleWithKeySVG } from '../../assets/images/people-with-key.svg';
 
 const LoginPage = () => {
+  document.title = 'Вход в аккаунт — СКАН';
+
   return (
     <MainLayout>
       <section className={styles.hero}>

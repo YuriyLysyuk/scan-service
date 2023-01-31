@@ -7,6 +7,8 @@ import SearchForm from '../../components/SearchForm/SearchForm';
 import { ReactComponent as ManWithRocketSVG } from '../../assets/images/man-with-rocket.svg';
 
 const SearchPage = () => {
+  document.title = 'Найти публикации о компании по ее ИНН — СКАН';
+
   return (
     <MainLayout>
       <section className={styles.search}>

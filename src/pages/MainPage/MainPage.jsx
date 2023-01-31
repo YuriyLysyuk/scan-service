@@ -12,6 +12,8 @@ import manDashboardSrc from '../../assets/images/man-dashboard.jpg';
 import TariffList from '../../components/TariffList/TariffList';
 
 const MainPage = () => {
+  document.title = 'Сервис по поиску публикаций о компании по ее ИНН — СКАН';
+
   const { isLoggedIn } = useAuth();
   const navigate = useNavigate();
 
@@ -19,7 +21,7 @@ const MainPage = () => {
     <MainLayout>
       <section className={styles.hero}>
         <div className={styles.hero__text}>
-          <h1>Сервис по поиску публикаций о компании по его ИНН</h1>
+          <h1>Сервис по поиску публикаций о компании по ее ИНН</h1>
 
           <p className={styles.hero__desc}>
             Комплексный анализ публикаций, получение данных в формате PDF на

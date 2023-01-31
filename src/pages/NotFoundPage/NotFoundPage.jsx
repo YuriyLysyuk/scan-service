@@ -7,10 +7,12 @@ import { HOME_URL } from '../../constants';
 import MainLayout from '../../layouts/MainLayout/MainLayout';
 
 const NotFoundPage = () => {
+  document.title = 'Ошибка 404 — СКАН';
+
   return (
     <MainLayout>
       <section className={styles.hero}>
-        <h1>Упс :(</h1>
+        <h1>Упс, ошибка 404 :(</h1>
 
         <p className={styles.hero__desc}>
           Такой страницы не существует. Попробуйте вернуться на{' '}

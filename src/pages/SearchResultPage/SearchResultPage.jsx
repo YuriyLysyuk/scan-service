@@ -5,6 +5,8 @@ import styles from './styles.module.scss';
 import MainLayout from '../../layouts/MainLayout/MainLayout';
 
 const SearchResultPage = () => {
+  document.title = 'Результаты поиска публикаций о компании по его ИНН — СКАН';
+
   return (
     <MainLayout>
       <section className={styles.result}>
