@@ -1,5 +1,4 @@
 import React from 'react';
-
 import { Routes, Route } from 'react-router-dom';
 
 import { HOME_URL, LOGIN_URL, SEARCH_URL } from './constants';
