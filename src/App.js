@@ -1,9 +1,10 @@
 import React from 'react';
 
-import { HOME_URL, LOGIN_URL } from './constants';
 import { Routes, Route } from 'react-router-dom';
+import { HOME_URL, LOGIN_URL, SEARCH_URL } from './constants';
 import MainPage from './pages/MainPage/MainPage';
 import LoginPage from './pages/LoginPage/LoginPage';
+import SearchPage from './pages/SearchPage/SearchPage';
 import NotFoundPage from './pages/NotFoundPage/NotFoundPage';
 
 const App = () => {
@@ -11,6 +12,13 @@ const App = () => {
     <Routes>
       <Route index path={HOME_URL} element={<MainPage />} />
       <Route path={LOGIN_URL} element={<LoginPage />} />
+
+      <Route
+        path={SEARCH_URL}
+        element={
+            <SearchPage />
+        }
+      ></Route>
 
       <Route path="*" element={<NotFoundPage />} />
     </Routes>
