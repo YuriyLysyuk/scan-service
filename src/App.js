@@ -3,7 +3,6 @@ import { Routes, Route } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
 
 import { HOME_URL, LOGIN_URL, SEARCH_URL } from './constants';
-import RequireAuth from './utils/RequireAuth';
 import { isAccessTokenExpire } from './utils/helpers';
 import { useAuth } from './hooks/useAuth';
 import { logout } from './redux/slices/authSlice';
@@ -12,6 +11,7 @@ import LoginPage from './pages/LoginPage/LoginPage';
 import SearchPage from './pages/SearchPage/SearchPage';
 import SearchResultPage from './pages/SearchResultPage/SearchResultPage';
 import NotFoundPage from './pages/NotFoundPage/NotFoundPage';
+import RequireAuth from './components/RequireAuth/RequireAuth';
 
 const App = () => {
   const { expire } = useAuth();
