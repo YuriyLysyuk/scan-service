@@ -10,7 +10,7 @@ import TextField from '../TextField/TextField';
 import Button from '../Button/Button';
 
 import { HOME_URL } from '../../constants';
-import validationSchema from '../../utils/validationSchema';
+import { loginValidationSchema } from '../../utils/validation/schema';
 import { useLoginMutation } from '../../redux/api/scan';
 
 const LoginForm = ({ className }) => {
@@ -46,7 +46,7 @@ const LoginForm = ({ className }) => {
   return (
     <Formik
       initialValues={initialValues}
-      validationSchema={validationSchema}
+      validationSchema={loginValidationSchema}
       onSubmit={handleOnSubmit}
     >
       {({ dirty, isValid, isSubmitting }) => (
