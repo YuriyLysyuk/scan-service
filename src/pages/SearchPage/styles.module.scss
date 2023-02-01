@@ -51,19 +51,9 @@
   }
 
   &__form {
-    display: flex;
-    flex-direction: column;
-    width: 100%;
-    max-width: 43rem;
-    padding: 2.5rem 1.5rem 2rem;
-    background: v.$light;
-    box-shadow: 0px 0px 2rem rgba(0, 0, 0, 0.15);
-    border-radius: 1rem;
-
     @include media('>=#{v.$mobile-menu-breakpoint}') {
       grid-column: 1 / 2;
       margin-top: 2.7rem;
-      padding: 2.5rem 2.5rem 3.9rem;
     }
   }
 }

@@ -24,34 +24,40 @@ const SearchForm = ({ className }) => {
     >
       {({ dirty, isValid, isSubmitting }) => (
         <Form className={formClass}>
-          <TextInput
-            label="ИНН компании *"
-            id="inn"
-            name="inn"
-            placeholder="10 цифр"
-          />
+          <div className={styles.col}>
+            <TextInput
+              label="ИНН компании *"
+              id="inn"
+              name="inn"
+              placeholder="10 цифр"
+            />
 
-          <SelectInput label="Тональность:" id="tonality" name="tonality">
-            <option value="any">Любая</option>
-            <option value="positive">Позитивная</option>
-            <option value="negative">Негативная</option>
-          </SelectInput>
+            <SelectInput label="Тональность:" id="tonality" name="tonality">
+              <option value="any">Любая</option>
+              <option value="positive">Позитивная</option>
+              <option value="negative">Негативная</option>
+            </SelectInput>
 
-          <TextInput
-            label="Количество документов в выдаче *"
-            id="limit"
-            name="limit"
-            placeholder="От 1 до 1000"
-          />
+            <TextInput
+              label="Количество документов в выдаче *"
+              id="limit"
+              name="limit"
+              placeholder="От 1 до 1000"
+            />
+          </div>
 
-          <Button
-            className={styles.submit}
-            type="submit"
-            color="primary"
-            disabled={!dirty || !isValid || isSubmitting}
-          >
-            Войти
-          </Button>
+          <div className={styles.col}>
+            <div className={styles.submitGroup}>
+              <Button
+                className={styles.submit}
+                type="submit"
+                color="primary"
+                disabled={!dirty || !isValid || isSubmitting}
+              >
+                Поиск
+              </Button>
+            </div>
+          </div>
         </Form>
       )}
     </Formik>

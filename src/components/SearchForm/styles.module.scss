@@ -1,9 +1,20 @@
 @use '../../scss/forms';
 @use '../../scss/include-media' as *;
+@use '../../scss/variables' as v;
 
 .form {
-  display: flex;
-  flex-direction: column;
+  display: grid;
+  grid-template-columns: 1fr;
+  width: 100%;
+  padding: 2.5rem 1.5rem 2rem;
+  background: v.$light;
+  box-shadow: 0px 0px 2rem rgba(0, 0, 0, 0.15);
+  border-radius: 1rem;
+
+  @include media('>=#{v.$mobile-menu-breakpoint}') {
+    grid-template-columns: 1fr 1fr;
+    padding: 2.5rem 2.5rem 3.9rem;
+  }
 
   input,
   select {
@@ -13,9 +24,9 @@
   }
 }
 
-.submit {
-  width: 100%;
-  margin-top: 1rem;
+.col {
+  display: flex;
+  flex-direction: column;
 }
 
 .errorMessage {
@@ -25,3 +36,18 @@
   position: unset;
   margin-top: 0.3rem;
 }
+
+.submitGroup {
+  width: 100%;
+
+  @include media('>=#{v.$mobile-menu-breakpoint}') {
+    align-self: end;
+    max-width: 30.5rem;
+  }
+}
+
+.submit {
+  width: 100%;
+  margin-bottom: 1rem;
+}
+
