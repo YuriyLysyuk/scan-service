@@ -8,6 +8,7 @@ import { initialValues } from './params';
 import Button from '../Button/Button';
 import TextField from '../TextField/TextField';
 import SelectField from '../SelectField/SelectField';
+import Checkbox from '../Checkbox/Checkbox';
 
 import validationSchema from '../../utils/validationSchema';
 
@@ -47,6 +48,32 @@ const SearchForm = ({ className }) => {
           </div>
 
           <div className={styles.col}>
+            <Checkbox label="Признак максимальной полноты" name="maxFullness" />
+
+            <Checkbox
+              label="Упоминания в бизнес-контексте"
+              name="inBusinessNews"
+            />
+
+            <Checkbox label="Главная роль в публикации" name="onlyMainRole" />
+
+            <Checkbox
+              label="Публикации только с риск-факторами"
+              name="onlyWithRiskFactors"
+            />
+
+            <Checkbox
+              label="Исключать технические новости рынков"
+              name="excludeTechNews"
+            />
+
+            <Checkbox
+              label="Исключать анонсы и календари"
+              name="excludeAnnouncements"
+            />
+
+            <Checkbox label="Исключать сводки новостей" name="excludeDigests" />
+
             <div className={styles.submitGroup}>
               <Button
                 className={styles.submit}
