@@ -1,5 +1,7 @@
 import { string, number, setLocale } from 'yup';
 
+import { isINNLegalEntity } from './functions';
+
 setLocale({
   number: {
     min: 'Минимум от ${min}',
@@ -17,3 +19,7 @@ export const limit = number()
   .min(1)
   .max(1000);
 
+export const inn = string()
+  .required('Введите ИНН компании')
+  .transform((value) => value.replace(/\D/g, ''))
+  .test('innValid', 'Неверный ИНН', (value) => isINNLegalEntity(value));
