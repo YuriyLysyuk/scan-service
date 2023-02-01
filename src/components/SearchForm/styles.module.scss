@@ -1,8 +1,15 @@
 @use '../../scss/forms';
+@use '../../scss/include-media' as *;
 
 .form {
   display: flex;
   flex-direction: column;
+
+  input {
+    @include media('>=xs') {
+      max-width: 24.2rem;
+    }
+  }
 }
 
 .submit {

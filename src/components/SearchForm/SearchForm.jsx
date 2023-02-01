@@ -6,6 +6,7 @@ import styles from './styles.module.scss';
 import { initialValues } from './params';
 
 import Button from '../Button/Button';
+import TextInput from '../TextInput/TextInput';
 
 import validationSchema from '../../utils/validationSchema';
 
@@ -22,7 +23,13 @@ const SearchForm = ({ className }) => {
     >
       {({ dirty, isValid, isSubmitting }) => (
         <Form className={formClass}>
-          {/* ToDo inputs */}
+          <TextInput
+            label="ИНН компании *"
+            id="inn"
+            name="inn"
+            type="text"
+            placeholder="10 цифр"
+          />
 
           <Button
             className={styles.submit}

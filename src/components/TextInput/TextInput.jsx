@@ -6,15 +6,15 @@ import MaskedInput from 'react-text-mask';
 import styles from './styles.module.scss';
 import getMaskByInputName from './masks';
 
-const TextInput = ({ label, ...props }) => {
+const TextInput = ({ label, className, ...props }) => {
   const [field, meta] = useField(props);
   const hasError = meta.touched && meta.error;
 
-  const groupClass = classNames(styles.group, {
+  const groupClass = classNames(styles.group, className, {
     [`${styles.error}`]: hasError,
   });
 
-  const mask = getMaskByInputName(props.name);
+  const mask = getMaskByInputName(field);
 
   return (
     <div className={groupClass}>
