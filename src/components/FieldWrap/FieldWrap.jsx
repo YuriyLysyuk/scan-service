@@ -3,7 +3,7 @@ import classNames from 'classnames';
 
 import styles from './styles.module.scss';
 
-const InputWrap = ({ className, options, children }) => {
+const FieldWrap = ({ className, options, children }) => {
   const { label, field, meta } = options;
   const hasError = meta.touched && meta.error;
 
@@ -24,4 +24,4 @@ const InputWrap = ({ className, options, children }) => {
   );
 };
 
-export default InputWrap;
+export default FieldWrap;

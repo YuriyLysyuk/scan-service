@@ -3,7 +3,7 @@ import { useField } from 'formik';
 
 import styles from './styles.module.scss';
 
-import InputWrap from '../InputWrap/InputWrap';
+import FieldWrap from '../FieldWrap/FieldWrap';
 
 const SelectField = ({ label, className, children, ...props }) => {
   const [field, meta] = useField(props);
@@ -15,11 +15,11 @@ const SelectField = ({ label, className, children, ...props }) => {
   };
 
   return (
-    <InputWrap className={className} options={wrapOptions}>
+    <FieldWrap className={className} options={wrapOptions}>
       <select className={styles.input} {...field} {...props}>
         {children}
       </select>
-    </InputWrap>
+    </FieldWrap>
   );
 };
 

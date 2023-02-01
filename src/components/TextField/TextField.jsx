@@ -5,7 +5,7 @@ import MaskedInput from 'react-text-mask';
 import styles from './styles.module.scss';
 import getMaskByInputName from './masks';
 
-import InputWrap from '../InputWrap/InputWrap';
+import FieldWrap from '../FieldWrap/FieldWrap';
 
 const TextField = ({ label, className, ...props }) => {
   const [field, meta] = useField(props);
@@ -19,7 +19,7 @@ const TextField = ({ label, className, ...props }) => {
   const mask = getMaskByInputName(field);
 
   return (
-    <InputWrap className={className} options={wrapOptions}>
+    <FieldWrap className={className} options={wrapOptions}>
       <MaskedInput
         className={styles.input}
         type="text"
@@ -27,7 +27,7 @@ const TextField = ({ label, className, ...props }) => {
         {...props}
         mask={mask}
       />
-    </InputWrap>
+    </FieldWrap>
   );
 };
 
