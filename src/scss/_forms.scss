@@ -5,26 +5,22 @@
   position: relative;
   display: flex;
   flex-direction: column;
-  margin-bottom: 2rem;
+  margin-bottom: 3rem;
 }
 
 %label {
-  padding-bottom: 1.5rem;
-  font-size: 1.4rem;
-  line-height: 1.7rem;
-  color: #949494;
+  padding-bottom: 2rem;
+  font-size: 1.8rem;
+  line-height: 2.2rem;
+  color: v.$dark;
   cursor: pointer;
-
-  @include media('>=#{v.$mobile-menu-breakpoint}') {
-    font-size: 1.6rem;
-    line-height: 1.9rem;
-  }
 }
 
 %text-input {
+  width: 100%;
   padding: 1.2rem 1.9rem;
-  font-size: 1.6rem;
-  line-height: 1.9rem;
+  font-size: 1.4rem;
+  line-height: 1.7rem;
   color: v.$black;
   background-color: v.$white;
   border: 0.1rem solid #c7c7c7;
@@ -44,13 +40,18 @@
     position: absolute;
     top: calc(100% + 0.3rem);
     width: 100%;
-    font-size: 1.2rem;
-    line-height: 1.5rem;
+    font-size: 1.4rem;
+    line-height: 1.7rem;
     text-align: center;
-
-    @include media('>=#{v.$mobile-menu-breakpoint}') {
-      font-size: 1.4rem;
-      line-height: 1.7rem;
-    }
   }
+}
+
+::placeholder {
+  font-weight: 400;
+  font-size: 1.4rem;
+  line-height: 1.7rem;
+  letter-spacing: 0.03em;
+  color: #949494;
+  text-align: center;
+  opacity: 0.4;
 }

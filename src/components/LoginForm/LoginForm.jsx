@@ -51,9 +51,16 @@ const LoginForm = ({ className }) => {
     >
       {({ dirty, isValid, isSubmitting }) => (
         <Form className={formClass}>
-          <TextInput label="Логин:" id="login" name="login" type="text" />
+          <TextInput
+            className={styles.textInputGroup}
+            label="Логин:"
+            id="login"
+            name="login"
+            type="text"
+          />
 
           <TextInput
+            className={styles.textInputGroup}
             label="Пароль:"
             id="password"
             name="password"
