@@ -11,8 +11,11 @@
   box-shadow: 0px 0px 2rem rgba(0, 0, 0, 0.15);
   border-radius: 1rem;
 
-  @include media('>=#{v.$mobile-menu-breakpoint}') {
+  @include media('>=md') {
     grid-template-columns: 1fr 1fr;
+  }
+
+  @include media('>=#{v.$mobile-menu-breakpoint}') {
     padding: 2.5rem 2.5rem 3.9rem;
   }
 
