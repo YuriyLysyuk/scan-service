@@ -7,3 +7,7 @@ export const loginValidationSchema = object({
   password,
 });
 
+export const searchValidationSchema = object({
+  inn,
+  limit,
+});
