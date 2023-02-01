@@ -6,7 +6,7 @@ import styles from './styles.module.scss';
 import { initialValues } from './params';
 
 import Button from '../Button/Button';
-import TextInput from '../TextInput/TextInput';
+import TextField from '../TextField/TextField';
 import SelectField from '../SelectField/SelectField';
 
 import validationSchema from '../../utils/validationSchema';
@@ -25,7 +25,7 @@ const SearchForm = ({ className }) => {
       {({ dirty, isValid, isSubmitting }) => (
         <Form className={formClass}>
           <div className={styles.col}>
-            <TextInput
+            <TextField
               label="ИНН компании *"
               id="inn"
               name="inn"
@@ -38,7 +38,7 @@ const SearchForm = ({ className }) => {
               <option value="negative">Негативная</option>
             </SelectField>
 
-            <TextInput
+            <TextField
               label="Количество документов в выдаче *"
               id="limit"
               name="limit"

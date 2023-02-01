@@ -7,7 +7,7 @@ import getMaskByInputName from './masks';
 
 import InputWrap from '../InputWrap/InputWrap';
 
-const TextInput = ({ label, className, ...props }) => {
+const TextField = ({ label, className, ...props }) => {
   const [field, meta] = useField(props);
 
   const wrapOptions = {
@@ -31,4 +31,4 @@ const TextInput = ({ label, className, ...props }) => {
   );
 };
 
-export default TextInput;
+export default TextField;

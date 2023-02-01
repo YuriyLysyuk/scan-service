@@ -6,7 +6,7 @@ import { useNavigate, useLocation } from 'react-router-dom';
 import styles from './styles.module.scss';
 import { initialValues } from './params';
 
-import TextInput from '../TextInput/TextInput';
+import TextField from '../TextField/TextField';
 import Button from '../Button/Button';
 
 import { HOME_URL } from '../../constants';
@@ -51,14 +51,14 @@ const LoginForm = ({ className }) => {
     >
       {({ dirty, isValid, isSubmitting }) => (
         <Form className={formClass}>
-          <TextInput
+          <TextField
             className={styles.textInputGroup}
             label="Логин:"
             id="login"
             name="login"
           />
 
-          <TextInput
+          <TextField
             className={styles.textInputGroup}
             label="Пароль:"
             id="password"
