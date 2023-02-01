@@ -56,6 +56,8 @@ const SearchForm = ({ className }) => {
               >
                 Поиск
               </Button>
+
+              <p className={styles.mark}>* Обязательные к заполнению поля</p>
             </div>
           </div>
         </Form>
