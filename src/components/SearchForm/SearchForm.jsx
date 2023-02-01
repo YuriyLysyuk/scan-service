@@ -37,6 +37,13 @@ const SearchForm = ({ className }) => {
             <option value="negative">Негативная</option>
           </SelectInput>
 
+          <TextInput
+            label="Количество документов в выдаче *"
+            id="limit"
+            name="limit"
+            placeholder="От 1 до 1000"
+          />
+
           <Button
             className={styles.submit}
             type="submit"
