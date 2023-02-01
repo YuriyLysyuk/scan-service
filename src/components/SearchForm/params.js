@@ -1,1 +1,3 @@
-export const initialValues = {};
+export const initialValues = {
+  inn: '',
+};
