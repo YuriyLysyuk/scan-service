@@ -5,7 +5,7 @@ import styles from './styles.module.scss';
 
 import InputWrap from '../InputWrap/InputWrap';
 
-const SelectInput = ({ label, className, children, ...props }) => {
+const SelectField = ({ label, className, children, ...props }) => {
   const [field, meta] = useField(props);
 
   const wrapOptions = {
@@ -23,4 +23,4 @@ const SelectInput = ({ label, className, children, ...props }) => {
   );
 };
 
-export default SelectInput;
+export default SelectField;

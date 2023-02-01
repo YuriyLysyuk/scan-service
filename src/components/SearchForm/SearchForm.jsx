@@ -7,7 +7,7 @@ import { initialValues } from './params';
 
 import Button from '../Button/Button';
 import TextInput from '../TextInput/TextInput';
-import SelectInput from '../SelectInput/SelectInput';
+import SelectField from '../SelectField/SelectField';
 
 import validationSchema from '../../utils/validationSchema';
 
@@ -32,11 +32,11 @@ const SearchForm = ({ className }) => {
               placeholder="10 цифр"
             />
 
-            <SelectInput label="Тональность:" id="tonality" name="tonality">
+            <SelectField label="Тональность:" id="tonality" name="tonality">
               <option value="any">Любая</option>
               <option value="positive">Позитивная</option>
               <option value="negative">Негативная</option>
-            </SelectInput>
+            </SelectField>
 
             <TextInput
               label="Количество документов в выдаче *"
