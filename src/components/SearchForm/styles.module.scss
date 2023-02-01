@@ -20,7 +20,8 @@
   }
 
   input,
-  select {
+  select,
+  input + div {
     @include media('>=xs') {
       max-width: 24.2rem;
     }

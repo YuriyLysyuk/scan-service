@@ -10,7 +10,7 @@ import TextField from '../TextField/TextField';
 import SelectField from '../SelectField/SelectField';
 import Checkbox from '../Checkbox/Checkbox';
 
-import validationSchema from '../../utils/validationSchema';
+import { searchValidationSchema } from '../../utils/validation/schema';
 
 const SearchForm = ({ className }) => {
   const formClass = classNames(styles.form, className);
@@ -20,7 +20,7 @@ const SearchForm = ({ className }) => {
   return (
     <Formik
       initialValues={initialValues}
-      validationSchema={validationSchema}
+      validationSchema={searchValidationSchema}
       onSubmit={handleOnSubmit}
     >
       {({ dirty, isValid, isSubmitting }) => (
