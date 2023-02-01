@@ -56,7 +56,6 @@ const LoginForm = ({ className }) => {
             label="Логин:"
             id="login"
             name="login"
-            type="text"
           />
 
           <TextInput

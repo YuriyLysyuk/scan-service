@@ -20,7 +20,13 @@ const TextInput = ({ label, className, ...props }) => {
 
   return (
     <InputWrap className={className} options={wrapOptions}>
-      <MaskedInput className={styles.input} {...field} {...props} mask={mask} />
+      <MaskedInput
+        className={styles.input}
+        type="text"
+        {...field}
+        {...props}
+        mask={mask}
+      />
     </InputWrap>
   );
 };

@@ -27,7 +27,6 @@ const SearchForm = ({ className }) => {
             label="ИНН компании *"
             id="inn"
             name="inn"
-            type="text"
             placeholder="10 цифр"
           />
 
