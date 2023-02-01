@@ -7,6 +7,7 @@ import { initialValues } from './params';
 
 import Button from '../Button/Button';
 import TextInput from '../TextInput/TextInput';
+import SelectInput from '../SelectInput/SelectInput';
 
 import validationSchema from '../../utils/validationSchema';
 
@@ -29,6 +30,12 @@ const SearchForm = ({ className }) => {
             name="inn"
             placeholder="10 цифр"
           />
+
+          <SelectInput label="Тональность:" id="tonality" name="tonality">
+            <option value="any">Любая</option>
+            <option value="positive">Позитивная</option>
+            <option value="negative">Негативная</option>
+          </SelectInput>
 
           <Button
             className={styles.submit}

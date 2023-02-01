@@ -1,0 +1,5 @@
+@use '../../scss/forms';
+
+.input {
+  @extend %text-input;
+}
