@@ -29,9 +29,8 @@
 }
 
 %error {
-  color: v.$danger;
-
-  %text-input {
+  input[type='text'],
+  input[type='password'] {
     color: v.$danger;
     border-color: v.$danger;
   }
