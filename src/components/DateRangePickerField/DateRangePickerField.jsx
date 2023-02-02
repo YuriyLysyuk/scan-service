@@ -13,10 +13,13 @@ const DateRangePickerField = ({ label, className, options }) => {
 
   const wrapClass = classNames(styles.wrap, className);
 
+  const fieldWithErrorMeta =
+    startMeta.touched && startMeta.error ? startMeta : endMeta;
+
   const wrapOptions = {
     label,
     field: startField,
-    meta: startMeta,
+    meta: fieldWithErrorMeta,
   };
 
   return (
