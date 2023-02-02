@@ -3,7 +3,7 @@ import { Formik, Form } from 'formik';
 import classNames from 'classnames';
 
 import styles from './styles.module.scss';
-import { initialValues } from './params';
+import { initialValues, dateRangeOptions } from './params';
 
 import Button from '../Button/Button';
 import TextField from '../TextField/TextField';
@@ -11,6 +11,7 @@ import SelectField from '../SelectField/SelectField';
 import Checkbox from '../Checkbox/Checkbox';
 
 import { searchValidationSchema } from '../../utils/validation/schema';
+import DateRangePickerField from '../DateRangePickerField/DateRangePickerField';
 
 const SearchForm = ({ className }) => {
   const formClass = classNames(styles.form, className);
@@ -44,6 +45,11 @@ const SearchForm = ({ className }) => {
               id="limit"
               name="limit"
               placeholder="От 1 до 1000"
+            />
+
+            <DateRangePickerField
+              label="Диапазон поиска *"
+              options={dateRangeOptions}
             />
           </div>
 
