@@ -5,6 +5,7 @@
 .form {
   display: grid;
   grid-template-columns: 1fr;
+  column-gap: v.$gap;
   width: 100%;
   padding: 2.5rem 1.5rem;
   background: v.$light;
