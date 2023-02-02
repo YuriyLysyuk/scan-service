@@ -23,3 +23,7 @@ export const inn = string()
   .required('Введите ИНН компании')
   .transform((value) => value.replace(/\D/g, ''))
   .test('innValid', 'Неверный ИНН', (value) => isINNLegalEntity(value));
+
+export const startDate = string().required('Введите дату начала');
+
+export const endDate = string().required('Введите дату конца');
