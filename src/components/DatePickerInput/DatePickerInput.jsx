@@ -1,5 +1,5 @@
 import React from 'react';
-import { useField, useFormikContext } from 'formik';
+import { useFormikContext } from 'formik';
 import DatePicker from 'react-datepicker';
 
 import styles from './styles.module.scss';

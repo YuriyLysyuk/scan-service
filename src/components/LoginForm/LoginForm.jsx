@@ -33,6 +33,8 @@ const LoginForm = ({ className }) => {
     if (isLoginSuccess) {
       navigate(from);
     }
+
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [isLoginLoading]);
 
   const formClass = classNames(styles.form, className);

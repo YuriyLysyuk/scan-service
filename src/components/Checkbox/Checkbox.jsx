@@ -5,7 +5,7 @@ import classNames from 'classnames';
 import styles from './styles.module.scss';
 
 const Checkbox = ({ label, className, ...props }) => {
-  const [field, meta] = useField(props);
+  const [field] = useField(props);
 
   const groupClass = classNames(styles.group, className);
 

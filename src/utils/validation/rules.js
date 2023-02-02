@@ -4,8 +4,8 @@ import { isINNLegalEntity, removeNonDigit, getTodayEnd } from './functions';
 
 setLocale({
   number: {
-    min: 'Минимум от ${min}',
-    max: 'Максимум до ${max}',
+    min: ({ min }) => `Минимум от ${min}`,
+    max: ({ max }) => `Максимум до ${max}`,
   },
 });
 

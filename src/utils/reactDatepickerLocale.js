@@ -1,4 +1,4 @@
-import { registerLocale, setDefaultLocale } from 'react-datepicker';
+import { registerLocale } from 'react-datepicker';
 import ru from 'date-fns/locale/ru';
 
 registerLocale('ru', ru);
