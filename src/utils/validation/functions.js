@@ -23,3 +23,11 @@ export const isINNLegalEntity = (value) => {
 };
 
 export const removeNonDigit = (value) => value.replace(/\D/g, '');
+
+export const getTodayEnd = () => {
+  const today = new Date();
+
+  today.setHours(23, 59, 59, 999);
+
+  return today;
+};

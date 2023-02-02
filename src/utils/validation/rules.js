@@ -1,6 +1,6 @@
-import { string, number, setLocale } from 'yup';
+import { string, number, date, setLocale } from 'yup';
 
-import { isINNLegalEntity, removeNonDigit } from './functions';
+import { isINNLegalEntity, removeNonDigit, getTodayEnd } from './functions';
 
 setLocale({
   number: {
@@ -24,6 +24,12 @@ export const inn = string()
   .transform(removeNonDigit)
   .test('innValid', 'Неверный ИНН', isINNLegalEntity);
 
-export const startDate = string().required('Введите дату начала');
+export const startDate = date()
+  .typeError('Значение должно быть датой (дд.мм.гггг)')
+  .max(getTodayEnd(), 'Дата начала должна быть в прошлом')
+  .required('Выберите дату начала');
 
-export const endDate = string().required('Введите дату конца');
+export const endDate = date()
+  .typeError('Значение должно быть датой (дд.мм.гггг)')
+  .max(getTodayEnd(), 'Дата конца должна быть в прошлом')
+  .required('Выберите дату конца');
