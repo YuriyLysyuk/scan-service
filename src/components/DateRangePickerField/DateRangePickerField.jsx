@@ -22,15 +22,22 @@ const DateRangePickerField = ({ label, className, options }) => {
   return (
     <FieldWrap className={wrapClass} options={wrapOptions}>
       <DatePickerInput
-        wrapperClassName={styles.datePickerWrap}
         {...startField}
         {...options.start}
+        wrapperClassName={styles.datePickerWrap}
+        selectsStart
+        startDate={startField.value}
+        endDate={endField.value}
       />
 
       <DatePickerInput
-        wrapperClassName={styles.datePickerWrap}
         {...endField}
         {...options.end}
+        wrapperClassName={styles.datePickerWrap}
+        selectsEnd
+        startDate={startField.value}
+        endDate={endField.value}
+        minDate={startField.value}
       />
     </FieldWrap>
   );
