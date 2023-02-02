@@ -1,9 +1,10 @@
 import React from 'react';
 import { useField, useFormikContext } from 'formik';
 import DatePicker from 'react-datepicker';
-import 'react-datepicker/dist/react-datepicker.css';
 
 import styles from './styles.module.scss';
+
+import '../../scss/_react-datepicker.scss';
 
 const DatePickerInput = ({ placeholder, ...props }) => {
   const { setFieldValue } = useFormikContext();

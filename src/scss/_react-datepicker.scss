@@ -1,0 +1,11 @@
+/**
+ * react-datepicker
+ */
+
+@use './variables' as v;
+
+@forward 'react-datepicker/src/stylesheets/datepicker.scss' with (
+  $datepicker__font-family: v.$font-family,
+  $datepicker__font-size: v.$paragraph,
+  $datepicker__item-size: 3.5rem
+);
