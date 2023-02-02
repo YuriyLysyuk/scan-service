@@ -5,6 +5,7 @@ import { BrowserRouter } from 'react-router-dom';
 import { PersistGate } from 'redux-persist/integration/react';
 
 import { persistor, store } from './redux/store';
+import './utils/reactDatepickerLocale';
 import './index.scss';
 import App from './App';
 

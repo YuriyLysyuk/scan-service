@@ -22,6 +22,7 @@ const DatePickerInput = ({ placeholder, ...props }) => {
       selected={date}
       onChange={onDateChange}
       placeholderText={placeholder}
+      locale="ru"
     />
   );
 };
