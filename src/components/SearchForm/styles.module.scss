@@ -44,10 +44,19 @@
 
 .submitGroup {
   width: 100%;
+  margin-top: 1rem;
 
-  @include media('>=#{v.$mobile-menu-breakpoint}') {
-    align-self: end;
+  @include media('>=xs') {
     max-width: 30.5rem;
+  }
+
+  @include media('>=md') {
+    align-self: end;
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    justify-content: flex-end;
   }
 }
 
