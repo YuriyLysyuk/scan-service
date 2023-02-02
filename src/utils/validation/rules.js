@@ -1,6 +1,6 @@
 import { string, number, setLocale } from 'yup';
 
-import { isINNLegalEntity } from './functions';
+import { isINNLegalEntity, removeNonDigit } from './functions';
 
 setLocale({
   number: {
@@ -21,8 +21,8 @@ export const limit = number()
 
 export const inn = string()
   .required('Введите ИНН компании')
-  .transform((value) => value.replace(/\D/g, ''))
-  .test('innValid', 'Неверный ИНН', (value) => isINNLegalEntity(value));
+  .transform(removeNonDigit)
+  .test('innValid', 'Неверный ИНН', isINNLegalEntity);
 
 export const startDate = string().required('Введите дату начала');
 

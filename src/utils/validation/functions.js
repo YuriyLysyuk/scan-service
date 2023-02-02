@@ -21,3 +21,5 @@ export const isINNLegalEntity = (value) => {
 
   return false;
 };
+
+export const removeNonDigit = (value) => value.replace(/\D/g, '');
