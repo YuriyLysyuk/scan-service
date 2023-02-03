@@ -7,11 +7,12 @@ import styles from './styles.module.scss';
 import '../../scss/_react-datepicker.scss';
 
 const DatePickerInput = ({ placeholder, ...props }) => {
-  const { setFieldValue } = useFormikContext();
+  const { setFieldValue, setFieldTouched } = useFormikContext();
 
   const date = (props.value && new Date(props.value)) || null;
 
   const onDateChange = (val) => {
+    setFieldTouched(props.name, true);
     setFieldValue(props.name, val);
   };
 
