@@ -1,4 +1,5 @@
 import React from 'react';
+import { useActionData } from 'react-router-dom';
 
 import styles from './styles.module.scss';
 
@@ -6,6 +7,10 @@ import MainLayout from '../../layouts/MainLayout/MainLayout';
 
 const SearchResultPage = () => {
   document.title = 'Результаты поиска публикаций о компании по его ИНН — СКАН';
+
+  const actionData = useActionData();
+
+  console.log(actionData);
 
   return (
     <MainLayout>

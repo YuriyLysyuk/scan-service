@@ -1,5 +1,7 @@
 import { createBrowserRouter } from 'react-router-dom';
 
+import { getFormValues } from './actions';
+
 import {
   HOME_URL,
   LOGIN_URL,
@@ -36,6 +38,7 @@ const router = createBrowserRouter([
       {
         path: SEARCH_RESULT_URL,
         element: <SearchResultPage />,
+        action: getFormValues,
       },
     ],
   },

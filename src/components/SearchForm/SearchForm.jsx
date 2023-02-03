@@ -1,6 +1,7 @@
 import React from 'react';
 import { Formik, Form } from 'formik';
 import classNames from 'classnames';
+import { useSubmit } from 'react-router-dom';
 
 import styles from './styles.module.scss';
 import { initialValues, dateRangeOptions } from './params';
@@ -9,14 +10,23 @@ import Button from '../Button/Button';
 import TextField from '../TextField/TextField';
 import SelectField from '../SelectField/SelectField';
 import Checkbox from '../Checkbox/Checkbox';
-
-import { searchValidationSchema } from '../../utils/validation/schema';
 import DateRangePickerField from '../DateRangePickerField/DateRangePickerField';
+
+import { SEARCH_RESULT_URL } from '../../constants';
+import { searchValidationSchema } from '../../utils/validation/schema';
 
 const SearchForm = ({ className }) => {
   const formClass = classNames(styles.form, className);
+  const submit = useSubmit();
 
-  const handleOnSubmit = (values, { setSubmitting }) => {};
+  const handleOnSubmit = async (values, { setSubmitting }) => {
+    submit(values, {
+      method: 'post',
+      action: SEARCH_RESULT_URL,
+    });
+
+    setSubmitting(false);
+  };
 
   return (
     <Formik
