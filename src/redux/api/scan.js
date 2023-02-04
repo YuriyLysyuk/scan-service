@@ -64,6 +64,16 @@ export const scanApi = createApi({
 
       transformResponse: (result) => result.data,
     }),
+
+    getObjectSearch: build.query({
+      query: (request) => ({
+        url: '/objectsearch',
+        method: 'POST',
+        body: request,
+      }),
+
+      transformResponse: (result) => result.items,
+    }),
   }),
 });
 
@@ -71,4 +81,5 @@ export const {
   useLoginMutation,
   useGetAccountInfoQuery,
   useGetObjectSearchHistogramsQuery,
+  useGetObjectSearchQuery,
 } = scanApi;

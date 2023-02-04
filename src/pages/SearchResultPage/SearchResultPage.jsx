@@ -7,7 +7,10 @@ import { SEARCH_URL } from '../../constants';
 import MainLayout from '../../layouts/MainLayout/MainLayout';
 import Button from '../../components/Button/Button';
 import { ReactComponent as WomanWithLupaSVG } from '../../assets/images/woman-with-lupa.svg';
-import { useGetObjectSearchHistogramsQuery } from '../../redux/api/scan';
+import {
+  useGetObjectSearchHistogramsQuery,
+  useGetObjectSearchQuery,
+} from '../../redux/api/scan';
 import { getObjectSearchRequest } from '../../redux/api/requests';
 
 const SearchResultPage = () => {
@@ -18,8 +21,10 @@ const SearchResultPage = () => {
   const request = getObjectSearchRequest(actionData);
 
   console.log(actionData);
-  const { data, isLoading, isError, error } =
+  const { data: histogramsData, isLoading: isHistogramsLoading } =
     useGetObjectSearchHistogramsQuery(request);
+  const { data: items, isLoading: isItemsLoading } =
+    useGetObjectSearchQuery(request);
 
   return (
     <MainLayout>
