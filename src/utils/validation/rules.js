@@ -1,6 +1,8 @@
 import { string, number, date, setLocale } from 'yup';
 
-import { isINNLegalEntity, removeNonDigit, getTodayEnd } from './functions';
+import { isINNLegalEntity } from './functions';
+
+import { removeNonDigit, getTodayEnd } from './../helpers';
 
 setLocale({
   number: {
