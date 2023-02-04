@@ -20,7 +20,7 @@ export const reduceHistogramsByDate = (data) => {
 
       return data;
     }, [])
-    .sort(({ dateA }, { dateB }) => dateA - dateB);
+    .sort(({ date: dateA }, { date: dateB }) => dateA - dateB);
 
   return result;
 };
