@@ -79,16 +79,16 @@ const SearchForm = ({ className }) => {
             />
 
             <Checkbox
-              label="Исключать технические новости рынков"
-              name="excludeTechNews"
+              label="Включать технические новости рынков"
+              name="includeTechNews"
             />
 
             <Checkbox
-              label="Исключать анонсы и календари"
-              name="excludeAnnouncements"
+              label="Включать анонсы и календари"
+              name="includeAnnouncements"
             />
 
-            <Checkbox label="Исключать сводки новостей" name="excludeDigests" />
+            <Checkbox label="Включать сводки новостей" name="includeDigests" />
 
             <div className={styles.submitGroup}>
               <Button

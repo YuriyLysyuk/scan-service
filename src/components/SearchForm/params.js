@@ -6,9 +6,9 @@ export const initialValues = {
   inBusinessNews: false,
   onlyMainRole: false,
   onlyWithRiskFactors: false,
-  excludeTechNews: false,
-  excludeAnnouncements: false,
-  excludeDigests: false,
+  includeTechNews: false,
+  includeAnnouncements: false,
+  includeDigests: false,
   startDate: '',
   endDate: '',
 };
