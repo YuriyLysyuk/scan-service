@@ -1,7 +1,11 @@
 import { createApi, fetchBaseQuery } from '@reduxjs/toolkit/query/react';
-import { API_BASE_URL } from '../../constants';
+
+import transformResponse from './transforms';
+
 import { setCredentials } from '../slices/authSlice';
 import { setAccountInfo } from '../slices/accountSlice';
+
+import { API_BASE_URL } from '../../constants';
 
 export const scanApi = createApi({
   reducerPath: 'scanApi',
@@ -62,7 +66,7 @@ export const scanApi = createApi({
         body: request,
       }),
 
-      transformResponse: (result) => result.data,
+      transformResponse: transformResponse.getObjectSearchHistograms,
     }),
 
     getObjectSearch: build.query({
