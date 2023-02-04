@@ -54,7 +54,21 @@ export const scanApi = createApi({
         } catch (error) {}
       },
     }),
+
+    getObjectSearchHistograms: build.query({
+      query: (request) => ({
+        url: '/objectsearch/histograms',
+        method: 'POST',
+        body: request,
+      }),
+
+      transformResponse: (result) => result.data,
+    }),
   }),
 });
 
-export const { useLoginMutation, useGetAccountInfoQuery } = scanApi;
+export const {
+  useLoginMutation,
+  useGetAccountInfoQuery,
+  useGetObjectSearchHistogramsQuery,
+} = scanApi;
