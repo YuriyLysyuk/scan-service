@@ -7,16 +7,16 @@ import { SEARCH_URL } from '../../constants';
 import MainLayout from '../../layouts/MainLayout/MainLayout';
 import Button from '../../components/Button/Button';
 import { ReactComponent as WomanWithLupaSVG } from '../../assets/images/woman-with-lupa.svg';
-import { getObjectsearchHistogramsRequest } from '../../redux/api/requests/objectsearchHistograms';
+import { getObjectSearchRequest } from '../../redux/api/requests';
 
 const SearchResultPage = () => {
   document.title = 'Результаты поиска публикаций о компании по его ИНН — СКАН';
 
   const navigate = useNavigate();
   const actionData = useActionData();
+  const request = getObjectSearchRequest(actionData);
 
   console.log(actionData);
-  const request = getObjectsearchHistogramsRequest(actionData);
 
   return (
     <MainLayout>

@@ -1,8 +1,8 @@
 import { formatISO } from 'date-fns/fp';
 
-import { removeNonDigit } from '../../../utils/helpers';
+import { removeNonDigit } from '../../utils/helpers';
 
-export const getObjectsearchHistogramsRequest = (data) => {
+export const getObjectSearchRequest = (data) => {
   const request = {
     intervalType: 'month', // string
     histogramTypes: [
