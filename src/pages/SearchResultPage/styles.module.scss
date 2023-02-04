@@ -14,6 +14,7 @@
     grid-template-columns: 1fr 1fr;
     justify-items: start;
     align-items: start;
+    padding-bottom: 0;
   }
 
   &__title {
@@ -52,6 +53,28 @@
     @include media('>=#{v.$mobile-menu-breakpoint}') {
       grid-column: 2/ 3;
       justify-self: end;
+    }
+  }
+}
+
+.histograms {
+  @extend %container;
+  @extend %section-padding;
+
+  @include media('>=#{v.$mobile-menu-breakpoint}') {
+    padding-top: 0;
+  }
+
+  &__title {
+    margin-bottom: 1rem;
+    font-family: v.$header-font;
+    font-weight: v.$header-font-weight;
+    font-size: 3rem;
+    line-height: 3.6rem;
+    letter-spacing: 0.02em;
+
+    @include media('>=#{v.$mobile-menu-breakpoint}') {
+      margin-bottom: 1.7rem;
     }
   }
 }
