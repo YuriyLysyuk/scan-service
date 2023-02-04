@@ -6,11 +6,8 @@ import styles from './styles.module.scss';
 import { SEARCH_URL } from '../../constants';
 import MainLayout from '../../layouts/MainLayout/MainLayout';
 import Button from '../../components/Button/Button';
+import Histograms from '../../components/Histograms/Histograms';
 import { ReactComponent as WomanWithLupaSVG } from '../../assets/images/woman-with-lupa.svg';
-import {
-  useGetObjectSearchHistogramsQuery,
-  useGetObjectSearchQuery,
-} from '../../redux/api/scan';
 import { getObjectSearchRequest } from '../../redux/api/requests';
 
 const SearchResultPage = () => {
@@ -18,13 +15,6 @@ const SearchResultPage = () => {
 
   const navigate = useNavigate();
   const actionData = useActionData();
-  const request = getObjectSearchRequest(actionData);
-
-  console.log(actionData);
-  const { data: histogramsData, isLoading: isHistogramsLoading } =
-    useGetObjectSearchHistogramsQuery(request);
-  const { data: items, isLoading: isItemsLoading } =
-    useGetObjectSearchQuery(request);
 
   return (
     <MainLayout>
@@ -49,6 +39,12 @@ const SearchResultPage = () => {
         </div>
 
         <WomanWithLupaSVG className={styles.hero__img} />
+      </section>
+
+      <section className={styles.histograms}>
+        <h2 className={styles.histograms__title}>Общая сводка</h2>
+
+        <Histograms />
       </section>
     </MainLayout>
   );
