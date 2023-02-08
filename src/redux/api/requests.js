@@ -41,3 +41,11 @@ export const getObjectSearchRequest = (data) => {
 
   return request;
 };
+
+export const getDocumentsRequest = (data = []) => {
+  const request = {
+    ids: data.map(({ encodedId }) => encodedId),
+  };
+
+  return request;
+};

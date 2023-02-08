@@ -9,7 +9,6 @@ import Button from '../../components/Button/Button';
 import Histograms from '../../components/Histograms/Histograms';
 import DocumentList from '../../components/DocumentList/DocumentList';
 import { ReactComponent as WomanWithLupaSVG } from '../../assets/images/woman-with-lupa.svg';
-import { getObjectSearchRequest } from '../../redux/api/requests';
 
 const actionData = {
   endDate: 'Sun Jan 01 2023 00:00:00 GMT+0300 (Москва, стандартное время)',

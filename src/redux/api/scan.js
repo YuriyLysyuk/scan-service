@@ -78,6 +78,14 @@ export const scanApi = createApi({
 
       transformResponse: (result) => result.items,
     }),
+
+    getDocuments: build.query({
+      query: (request) => ({
+        url: '/documents',
+        method: 'POST',
+        body: request,
+      }),
+    }),
   }),
 });
 
@@ -86,4 +94,5 @@ export const {
   useGetAccountInfoQuery,
   useGetObjectSearchHistogramsQuery,
   useGetObjectSearchQuery,
+  useGetDocumentsQuery,
 } = scanApi;
