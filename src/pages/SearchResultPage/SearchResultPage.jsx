@@ -62,6 +62,12 @@ const SearchResultPage = () => {
 
         <Histograms actionData={actionData} />
       </section>
+
+      <section className={styles.documents}>
+        <h2 className={styles.documents__title}>Общая сводка</h2>
+
+        <DocumentList actionData={actionData} />
+      </section>
     </MainLayout>
   );
 };

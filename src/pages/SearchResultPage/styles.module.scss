@@ -78,3 +78,21 @@
     }
   }
 }
+
+.documents {
+  @extend %container;
+  @extend %section-padding;
+
+  &__title {
+    margin-bottom: 3.1rem;
+    font-family: v.$header-font;
+    font-weight: v.$header-font-weight;
+    font-size: 3rem;
+    line-height: 3.6rem;
+    letter-spacing: 0.02em;
+
+    @include media('>=#{v.$mobile-menu-breakpoint}') {
+      margin-bottom: 5.5rem;
+    }
+  }
+}
