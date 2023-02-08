@@ -32,7 +32,7 @@ const Slider = ({ className, isLoading, settings, slideComponent, slides }) => {
       {isLoading ? (
         <div className={styles.loading}>
           <Spinner extClass={styles.spinner} />
-          <p>Загружаем данные</p>
+          <p className={styles.text}>Загружаем данные</p>
         </div>
       ) : (
         slides.map((slide) => (

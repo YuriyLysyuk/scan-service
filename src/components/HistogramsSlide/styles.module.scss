@@ -1,5 +1,4 @@
 @use '../../scss/include-media' as *;
-@use '../../scss/variables' as v;
 
 .inner {
   padding-top: 2rem;
@@ -8,14 +7,14 @@
 
 .content {
   display: flex;
-  flex-direction: column;
   align-items: center;
   width: 100%;
-  padding-left: 2rem;
-  padding-right: 2rem;
   background: #ffffff;
 
-  @include media('>=#{v.$mobile-menu-breakpoint}') {
+  @include media('>=xs') {
+    flex-direction: column;
+    padding-left: 2rem;
+    padding-right: 2rem;
     border-right: 2px solid #949494;
   }
 }
@@ -26,6 +25,17 @@
   height: auto;
 }
 
-.text:not(:last-child) {
-  margin-bottom: 2.5rem;
+.text {
+  width: 33%;
+  text-align: center;
+
+  @include media('>=xs') {
+    width: 100%;
+  }
+
+  &:not(:last-child) {
+    @include media('>=xs') {
+      margin-bottom: 2.5rem;
+    }
+  }
 }
