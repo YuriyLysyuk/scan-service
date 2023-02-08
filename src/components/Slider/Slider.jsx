@@ -1,7 +1,10 @@
 import React from 'react';
 import ReactSlick from 'react-slick';
 
-import Icon from '../../components/Icon/Icon';
+import styles from './styles.module.scss';
+
+import Spinner from '../Spinner/Spinner';
+import Icon from '../Icon/Icon';
 
 const NextArrow = ({ currentSlide, slideCount, ...props }) => (
   <div {...props}>
@@ -15,21 +18,27 @@ const PrevArrow = ({ currentSlide, slideCount, ...props }) => (
   </div>
 );
 
-const Slider = ({ className, settings, slideComponent, slides }) => {
-  if (Boolean(slides?.length) === false) return;
-
+const Slider = ({ className, isLoading, settings, slideComponent, slides }) => {
   const defaultSettings = {
-    ...settings,
     nextArrow: <NextArrow />,
     prevArrow: <PrevArrow />,
+    ...settings,
   };
 
   const Slide = slideComponent;
+
   return (
     <ReactSlick className={className} {...defaultSettings}>
-      {slides.map((slide) => (
-        <Slide key={slide.id || slide.date} slide={slide} />
-      ))}
+      {isLoading ? (
+        <div className={styles.loading}>
+          <Spinner extClass={styles.spinner} />
+          <p>Загружаем данные</p>
+        </div>
+      ) : (
+        slides.map((slide) => (
+          <Slide key={slide.id || slide.date} slide={slide} />
+        ))
+      )}
     </ReactSlick>
   );
 };
