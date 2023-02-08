@@ -1,0 +1,31 @@
+@use '../../scss/include-media' as *;
+@use '../../scss/variables' as v;
+
+.wrap {
+  position: relative;
+}
+
+.titles {
+  position: absolute;
+  top: 0;
+  left: 3.5rem;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  max-width: 13rem;
+  padding-top: 2rem;
+  padding-bottom: 2rem;
+  color: v.$light;
+  background-color: v.$accent-2;
+  border: 0.2rem solid v.$accent-2;
+  border-radius: 1rem 0 0 1rem;
+}
+
+.title {
+  padding-left: 2rem;
+  padding-right: 2rem;
+
+  &:not(:last-child) {
+    margin-bottom: 2.5rem;
+  }
+}

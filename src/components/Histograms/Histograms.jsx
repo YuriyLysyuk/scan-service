@@ -20,10 +20,7 @@ const Histograms = () => {
         Найдено {isLoading ? <Spinner /> : data.total} вариантов
       </p>
 
-      <HistogramsSlider
-        isLoading={isLoading}
-        slides={isLoading ? [] : data.data}
-      />
+      <HistogramsSlider isLoading={isLoading} slides={data?.data} />
     </>
   );
 };

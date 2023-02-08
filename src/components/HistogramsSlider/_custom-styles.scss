@@ -11,8 +11,9 @@
     border-radius: 1rem;
 
     @include media('>=#{v.$mobile-menu-breakpoint}') {
-      margin-left: 3.5rem;
+      margin-left: 16.5rem;
       margin-right: 3.5rem;
+      border-radius: 0 1rem 1rem 0;
     }
   }
 
