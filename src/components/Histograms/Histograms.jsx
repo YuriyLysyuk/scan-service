@@ -1,5 +1,4 @@
 import React from 'react';
-import { useActionData } from 'react-router-dom';
 
 import styles from './styles.module.scss';
 
@@ -9,8 +8,7 @@ import HistogramsSlider from '../HistogramsSlider/HistogramsSlider';
 import { useGetObjectSearchHistogramsQuery } from '../../redux/api/scan';
 import { getObjectSearchRequest } from '../../redux/api/requests';
 
-const Histograms = () => {
-  // const actionData = useActionData();
+const Histograms = ({ actionData }) => {
   const request = getObjectSearchRequest(actionData);
   const { data, isLoading } = useGetObjectSearchHistogramsQuery(request);
 

@@ -7,14 +7,30 @@ import { SEARCH_URL } from '../../constants';
 import MainLayout from '../../layouts/MainLayout/MainLayout';
 import Button from '../../components/Button/Button';
 import Histograms from '../../components/Histograms/Histograms';
+import DocumentList from '../../components/DocumentList/DocumentList';
 import { ReactComponent as WomanWithLupaSVG } from '../../assets/images/woman-with-lupa.svg';
 import { getObjectSearchRequest } from '../../redux/api/requests';
+
+const actionData = {
+  endDate: 'Sun Jan 01 2023 00:00:00 GMT+0300 (Москва, стандартное время)',
+  includeAnnouncements: 'false',
+  includeDigests: 'false',
+  includeTechNews: 'false',
+  inBusinessNews: 'false',
+  inn: '7710-13706-6',
+  limit: '100',
+  maxFullness: 'false',
+  onlyMainRole: 'false',
+  onlyWithRiskFactors: 'false',
+  startDate: 'Wed Jan 01 2020 00:00:00 GMT+0300 (Москва, стандартное время)',
+  tonality: 'any',
+};
 
 const SearchResultPage = () => {
   document.title = 'Результаты поиска публикаций о компании по его ИНН — СКАН';
 
   const navigate = useNavigate();
-  const actionData = useActionData();
+  // const actionData = useActionData();
 
   return (
     <MainLayout>
@@ -44,7 +60,7 @@ const SearchResultPage = () => {
       <section className={styles.histograms}>
         <h2 className={styles.histograms__title}>Общая сводка</h2>
 
-        <Histograms />
+        <Histograms actionData={actionData} />
       </section>
     </MainLayout>
   );
