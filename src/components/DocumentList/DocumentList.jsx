@@ -57,6 +57,7 @@ const DocumentList = ({ actionData }) => {
           color="primary"
           onClick={handleShowMoreClick}
           disabled={documents.isFetching}
+          isLoading={documents.isFetching}
         >
           Показать больше
         </Button>
