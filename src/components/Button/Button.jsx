@@ -3,12 +3,15 @@ import classNames from 'classnames/bind';
 
 import styles from './styles.module.scss';
 
+import Spinner from '../Spinner/Spinner';
+
 const cx = classNames.bind(styles);
 
 const Button = ({
   color,
   size,
   disabled,
+  isLoading,
   href,
   type,
   className,
@@ -33,6 +36,8 @@ const Button = ({
       {...buttonType}
       onClick={onClick}
     >
+      {isLoading && <Spinner extClass={styles.spinner} />}
+
       {children}
     </ButtonTag>
   );

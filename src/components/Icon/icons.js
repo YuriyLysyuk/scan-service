@@ -42,12 +42,6 @@ export const getIcon = (icon) => {
         alt: 'Щит',
       };
 
-    case 'spinner':
-      return {
-        src: spinnerSrc,
-        alt: 'Спиннер',
-      };
-
     default:
       return defaultIcon;
   }
