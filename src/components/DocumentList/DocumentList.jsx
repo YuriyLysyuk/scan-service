@@ -4,6 +4,7 @@ import styles from './styles.module.scss';
 
 import Spinner from '../Spinner/Spinner';
 import Button from '../Button/Button';
+import DocumentCard from '../DocumentCard/DocumentCard';
 
 import {
   useGetObjectSearchQuery,
@@ -47,9 +48,11 @@ const DocumentList = ({ actionData }) => {
   };
 
   return (
-    <div>
+    <div className={styles.list}>
       {documents.data &&
-        documents.data.map((doc) => <p key={doc.ok.id}>{doc.ok.title.text}</p>)}
+        documents.data.map((doc) => (
+          <DocumentCard key={doc.ok.id} doc={doc.ok} />
+        ))}
 
       {canLoadMore && (
         <Button
