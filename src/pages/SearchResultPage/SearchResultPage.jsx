@@ -10,26 +10,12 @@ import Histograms from '../../components/Histograms/Histograms';
 import DocumentList from '../../components/DocumentList/DocumentList';
 import { ReactComponent as WomanWithLupaSVG } from '../../assets/images/woman-with-lupa.svg';
 
-const actionData = {
-  endDate: 'Sun Jan 01 2023 00:00:00 GMT+0300 (Москва, стандартное время)',
-  includeAnnouncements: 'false',
-  includeDigests: 'false',
-  includeTechNews: 'false',
-  inBusinessNews: 'false',
-  inn: '7710-13706-6',
-  limit: '100',
-  maxFullness: 'false',
-  onlyMainRole: 'false',
-  onlyWithRiskFactors: 'false',
-  startDate: 'Wed Jan 01 2020 00:00:00 GMT+0300 (Москва, стандартное время)',
-  tonality: 'any',
-};
-
 const SearchResultPage = () => {
   document.title = 'Результаты поиска публикаций о компании по его ИНН — СКАН';
 
   const navigate = useNavigate();
-  // const actionData = useActionData();
+  const actionData = useActionData();
+  const hasData = Boolean(actionData);
 
   return (
     <MainLayout>
@@ -42,7 +28,7 @@ const SearchResultPage = () => {
             просим сохранять терпение
           </p>
 
-          {!Boolean(actionData) && (
+          {!hasData && (
             <Button
               className={styles.hero__btn}
               color="primary"
@@ -56,17 +42,21 @@ const SearchResultPage = () => {
         <WomanWithLupaSVG className={styles.hero__img} />
       </section>
 
-      <section className={styles.histograms}>
-        <h2 className={styles.histograms__title}>Общая сводка</h2>
+      {hasData && (
+        <section className={styles.histograms}>
+          <h2 className={styles.histograms__title}>Общая сводка</h2>
 
-        <Histograms actionData={actionData} />
-      </section>
+          <Histograms actionData={actionData} />
+        </section>
+      )}
 
-      <section className={styles.documents}>
-        <h2 className={styles.documents__title}>Общая сводка</h2>
+      {hasData && (
+        <section className={styles.documents}>
+          <h2 className={styles.documents__title}>Общая сводка</h2>
 
-        <DocumentList actionData={actionData} />
-      </section>
+          <DocumentList actionData={actionData} />
+        </section>
+      )}
     </MainLayout>
   );
 };
