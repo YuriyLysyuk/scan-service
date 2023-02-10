@@ -29,16 +29,17 @@ const Slider = ({ className, isLoading, settings, slideComponent, slides }) => {
 
   return (
     <ReactSlick className={className} {...defaultSettings}>
-      {isLoading ? (
+      {isLoading && (
         <div className={styles.loading}>
           <Spinner extClass={styles.spinner} />
           <p className={styles.text}>Загружаем данные</p>
         </div>
-      ) : (
+      )}
+
+      {slides &&
         slides.map((slide) => (
           <Slide key={slide.id || slide.date} slide={slide} />
-        ))
-      )}
+        ))}
     </ReactSlick>
   );
 };

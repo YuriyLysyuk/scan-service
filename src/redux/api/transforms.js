@@ -2,8 +2,8 @@ import { getObjectSearchTotal, reduceHistogramsByDate } from './helpers';
 
 const getObjectSearchHistograms = (result) => {
   const modifiedResult = {
-    data: reduceHistogramsByDate(result),
-    total: getObjectSearchTotal(result.data[0].data),
+    data: reduceHistogramsByDate(result) || null,
+    total: getObjectSearchTotal(result?.data[0]?.data) || 0,
   };
 
   return modifiedResult;

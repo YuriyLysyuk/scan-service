@@ -12,13 +12,21 @@ const Histograms = ({ actionData }) => {
   const request = getObjectSearchRequest(actionData);
   const { data, isLoading } = useGetObjectSearchHistogramsQuery(request);
 
+  const total = isLoading ? (
+    <Spinner extClass={styles.spinner} />
+  ) : data ? (
+    data.total
+  ) : (
+    0
+  );
+
   return (
     <>
-      <p className={styles.founded}>
-        Найдено {isLoading ? <Spinner /> : data.total} вариантов
-      </p>
+      <p className={styles.founded}>Найдено {total} вариантов</p>
 
-      <HistogramsSlider isLoading={isLoading} slides={data?.data} />
+      {data?.data && (
+        <HistogramsSlider isLoading={isLoading} slides={data?.data} />
+      )}
     </>
   );
 };

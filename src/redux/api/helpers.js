@@ -5,8 +5,10 @@ export const getObjectSearchTotal = (totalDocuments) => {
 };
 
 export const reduceHistogramsByDate = (data) => {
-  const totalDocuments = data.data[0];
-  const riskFactors = data.data[1];
+  const totalDocuments = data?.data[0];
+  const riskFactors = data?.data[1];
+
+  if (!totalDocuments || !riskFactors) return;
 
   const result = totalDocuments.data
     .reduce((data, { date, value }, i) => {

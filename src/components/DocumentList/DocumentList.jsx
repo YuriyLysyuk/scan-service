@@ -1,10 +1,13 @@
 import React, { useEffect, useState } from 'react';
+import { Link } from 'react-router-dom';
 
 import styles from './styles.module.scss';
 
 import Spinner from '../Spinner/Spinner';
 import Button from '../Button/Button';
 import DocumentCard from '../DocumentCard/DocumentCard';
+
+import { SEARCH_URL } from '../../constants';
 
 import {
   useGetObjectSearchQuery,
@@ -39,6 +42,15 @@ const DocumentList = ({ actionData }) => {
 
   if (objectSearch.isLoading) return <Spinner />;
   if (documents.isLoading) return <Spinner />;
+
+  if (!documents.data) {
+    return (
+      <p>
+        Ничего не найдено, попробуйте{' '}
+        <Link to={SEARCH_URL}>изменить параметры поиска</Link>
+      </p>
+    );
+  }
 
   const canLoadMore = objectSearch.data && show < objectSearch.data.length;
 
