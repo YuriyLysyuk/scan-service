@@ -55,14 +55,14 @@ const LoginForm = ({ className }) => {
         <Form className={formClass}>
           <TextField
             className={styles.textInputGroup}
-            label="Логин:"
+            label="Логин: (sf_student5)"
             id="login"
             name="login"
           />
 
           <TextField
             className={styles.textInputGroup}
-            label="Пароль:"
+            label="Пароль: (F9sqm@Kq38)"
             id="password"
             name="password"
             type="password"
