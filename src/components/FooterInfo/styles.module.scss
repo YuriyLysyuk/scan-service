@@ -5,8 +5,12 @@
   display: flex;
   flex-direction: column;
   gap: 2rem;
-  text-align: right;
+  text-align: center;
   color: v.$inverted-text-color;
+
+  @include media('>=xxs') {
+    text-align: right;
+  }
 }
 
 .contacts {

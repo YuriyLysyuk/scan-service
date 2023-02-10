@@ -1,46 +1,57 @@
 import React from 'react';
 import classNames from 'classnames';
+import { useNavigate } from 'react-router-dom';
+import { useDispatch } from 'react-redux';
 
 import styles from './styles.module.scss';
 
 import Button from '../Button/Button';
 
-// ToDo авторизация
-import { IS_AUTORIZED } from '../../constants';
-const user = {
-  name: 'Алексей А.',
-  avatar: 'https://randomuser.me/api/portraits/men/79.jpg',
-};
+import { LOGIN_URL, HOME_URL } from '../../constants';
+import { useAuth } from '../../hooks/useAuth';
+import { logout } from '../../redux/slices/authSlice';
 
 const UserMenu = ({ extClass }) => {
+  const { isLoggedIn, user } = useAuth();
+  const navigate = useNavigate();
+  const dispatch = useDispatch();
+
+  const handleLogoutClick = () => {
+    dispatch(logout());
+    navigate(HOME_URL);
+  };
+
   const unauthorizedClass = classNames(styles.unauthorized, extClass);
   const authorizedClass = classNames(styles.authorized, extClass);
 
-  return IS_AUTORIZED ? (
+  return isLoggedIn ? (
     <div className={authorizedClass}>
       <div className={styles.info}>
         <p className={styles.name}>{user.name}</p>
 
-        <a className={styles.logout} href="#">
+        <button className={styles.logout} onClick={handleLogoutClick}>
           Выйти
-        </a>
+        </button>
       </div>
 
       <img
         className={styles.avatar}
         src={user.avatar}
-        alt={'Аватар ${user.name}'}
+        alt={`Аватар ${user.name}`}
       />
     </div>
   ) : (
     <div className={unauthorizedClass}>
-      <a className={styles.signup} href="#">
-        Зарегистрироваться
-      </a>
+      <button className={styles.signup}>Зарегистрироваться</button>
 
       <div className={styles.vr}></div>
 
-      <Button extClass={styles.login} href="#" color="secondary" size="small">
+      <Button
+        extClass={styles.login}
+        onClick={() => navigate(LOGIN_URL)}
+        color="secondary"
+        size="small"
+      >
         Войти
       </Button>
     </div>

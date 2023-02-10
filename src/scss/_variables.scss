@@ -27,10 +27,12 @@ $accent: #ffb64f;
 $accent-2: #029491;
 $light: $white;
 $dark: $black;
+$danger: #ff5959;
 
 // Mixing colors
 $text-color: $dark;
 $inverted-text-color: $light;
+$link-color: $primary;
 
 $default-btn-text-color: $text-color;
 $default-btn-bg-color: $gray;
@@ -40,6 +42,7 @@ $secondary-btn-text-color: $text-color;
 $secondary-btn-bg-color: $secondary;
 
 // Blocks
+$container-max-width: 136rem;
 $margin: 2rem;
 $padding: 2rem;
 $section-padding-pc: 5rem 2rem;
@@ -48,4 +51,4 @@ $gap: 2rem;
 $bd-radius: 0.5rem;
 
 // Mobile menu breakpoint
-$mobile-menu-breakpoint: 'md';
+$mobile-menu-breakpoint: 'lg';

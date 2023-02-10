@@ -1,0 +1,42 @@
+@use '../../scss/forms';
+@use '../../scss/variables' as v;
+@use '../../scss/include-media' as *;
+
+.form {
+  display: flex;
+  flex-direction: column;
+
+  label {
+    padding-bottom: 1.5rem;
+    font-size: 1.4rem;
+    line-height: 1.7rem;
+    color: #949494;
+
+    @include media('>=#{v.$mobile-menu-breakpoint}') {
+      font-size: 1.6rem;
+      line-height: 1.9rem;
+    }
+  }
+
+  input {
+    font-size: 1.6rem;
+    line-height: 1.9rem;
+  }
+}
+
+.submit {
+  width: 100%;
+  margin-top: 1rem;
+}
+
+.errorMessage {
+  @extend %error;
+  @extend %error-message;
+
+  position: unset;
+  margin-top: 0.3rem;
+}
+
+.textInputGroup {
+  margin-bottom: 2rem !important;
+}

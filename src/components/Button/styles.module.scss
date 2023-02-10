@@ -84,6 +84,11 @@
   &:active {
     color: v.$primary-btn-text-color;
   }
+
+  & > .spinner {
+    fill: v.$primary-btn-text-color;
+    margin-right: 1rem;
+  }
 }
 
 .secondary {

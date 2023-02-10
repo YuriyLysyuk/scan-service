@@ -1,0 +1,22 @@
+@use '../../scss/variables' as v;
+@use '../../scss/include-media' as *;
+
+.list {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 2rem;
+
+  @include media('>=#{v.$mobile-menu-breakpoint}') {
+    grid-template-columns: 1fr 1fr;
+    gap: 3.8rem;
+  }
+}
+
+.loadMore {
+  margin: 1.7rem auto 3.7rem;
+
+  @include media('>=#{v.$mobile-menu-breakpoint}') {
+    grid-column: 1 / 3;
+    margin-top: 0;
+  }
+}

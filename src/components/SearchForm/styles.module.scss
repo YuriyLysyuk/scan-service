@@ -1,0 +1,72 @@
+@use '../../scss/forms';
+@use '../../scss/include-media' as *;
+@use '../../scss/variables' as v;
+
+.form {
+  display: grid;
+  grid-template-columns: 1fr;
+  column-gap: v.$gap;
+  width: 100%;
+  padding: 2.5rem 1.5rem;
+  background: v.$light;
+  box-shadow: 0px 0px 2rem rgba(0, 0, 0, 0.15);
+  border-radius: 1rem;
+
+  @include media('>=md') {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  @include media('>=#{v.$mobile-menu-breakpoint}') {
+    padding: 3rem 4rem;
+  }
+
+  input,
+  select,
+  input + div {
+    @include media('>=xs') {
+      max-width: 24.2rem;
+    }
+  }
+}
+
+.col {
+  display: flex;
+  flex-direction: column;
+}
+
+.errorMessage {
+  @extend %error;
+  @extend %error-message;
+
+  position: unset;
+  margin-top: 0.3rem;
+}
+
+.submitGroup {
+  width: 100%;
+  margin-top: 1rem;
+
+  @include media('>=xs') {
+    max-width: 30.5rem;
+  }
+
+  @include media('>=md') {
+    align-self: end;
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    justify-content: flex-end;
+  }
+}
+
+.submit {
+  width: 100%;
+  margin-bottom: 1rem;
+}
+
+.mark {
+  font-size: 1.4rem;
+  line-height: 1.7rem;
+  color: #949494;
+}

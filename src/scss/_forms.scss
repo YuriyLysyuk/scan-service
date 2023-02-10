@@ -1,0 +1,57 @@
+@use './variables' as v;
+@use './include-media' as *;
+
+%input-group {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 3rem;
+}
+
+%label {
+  padding-bottom: 2rem;
+  font-size: 1.8rem;
+  line-height: 2.2rem;
+  color: v.$dark;
+  cursor: pointer;
+}
+
+%text-input {
+  width: 100%;
+  padding: 1.2rem 1.9rem;
+  font-size: 1.4rem;
+  line-height: 1.7rem;
+  color: v.$black;
+  background-color: v.$white;
+  border: 0.1rem solid #c7c7c7;
+  box-shadow: 0 0 2rem rgba(0, 0, 0, 0.05);
+  border-radius: v.$bd-radius;
+}
+
+%error {
+  input[type='text'],
+  input[type='password'] {
+    color: v.$danger;
+    border-color: v.$danger;
+  }
+
+  &-message {
+    position: absolute;
+    top: calc(100% + 0.3rem);
+    width: 100%;
+    font-size: 1.4rem;
+    line-height: 1.7rem;
+    color: v.$danger;
+    text-align: center;
+  }
+}
+
+::placeholder {
+  font-weight: 400;
+  font-size: 1.4rem;
+  line-height: 1.7rem;
+  letter-spacing: 0.03em;
+  color: #949494;
+  text-align: center;
+  opacity: 0.4;
+}

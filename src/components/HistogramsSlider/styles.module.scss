@@ -1,0 +1,51 @@
+@use '../../scss/include-media' as *;
+@use '../../scss/variables' as v;
+
+.wrap {
+  position: relative;
+  padding-top: 6.6rem;
+
+  @include media('>=xs') {
+    padding-top: 0;
+  }
+}
+
+.titles {
+  position: absolute;
+  top: 0;
+  left: 1.5rem;
+  right: 1.5rem;
+  display: flex;
+  justify-content: space-between;
+  width: auto;
+
+  padding-top: 2rem;
+  padding-bottom: 2rem;
+  color: v.$light;
+  background-color: v.$accent-2;
+  border: 0.2rem solid v.$accent-2;
+  border-radius: 1rem 1rem 0 0;
+
+  @include media('>=xs') {
+    left: 3.5rem;
+    flex-direction: column;
+    max-width: 13rem;
+    border-radius: 1rem 0 0 1rem;
+  }
+}
+
+.title {
+  width: 33%;
+  text-align: center;
+
+  @include media('>=xs') {
+    padding-left: 2rem;
+    padding-right: 2rem;
+  }
+
+  &:not(:last-child) {
+    @include media('>=xs') {
+      margin-bottom: 2.5rem;
+    }
+  }
+}

@@ -22,11 +22,7 @@ const Logo = ({ extClass, color }) => {
       break;
   }
 
-  return (
-    <a href="/">
-      <img className={logoClass} src={logoSrc} alt="Логотип СКАН" />
-    </a>
-  );
+  return <img className={logoClass} src={logoSrc} alt="Логотип СКАН" />;
 };
 
 export default Logo;

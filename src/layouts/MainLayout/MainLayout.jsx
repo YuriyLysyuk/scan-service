@@ -1,7 +1,9 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 import styles from './styles.module.scss';
 
+import { HOME_URL } from '../../constants';
 import Navbar from '../../components/Navbar/Navbar';
 import Logo from '../../components/Logo/Logo';
 import FooterInfo from '../../components/FooterInfo/FooterInfo';
@@ -13,11 +15,13 @@ const MainLayout = ({ children }) => {
         <Navbar />
       </header>
 
-      <main>{children}</main>
+      <main className={styles.main}>{children}</main>
 
       <footer className={styles.footer}>
         <div className={styles.row}>
-          <Logo color="white" />
+          <Link to={HOME_URL}>
+            <Logo color="white" />
+          </Link>
 
           <FooterInfo />
         </div>

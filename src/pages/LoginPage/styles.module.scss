@@ -1,0 +1,48 @@
+@use '../../scss/placeholders';
+@use '../../scss/typography';
+@use '../../scss/variables' as v;
+@use '../../scss/include-media' as *;
+
+.hero {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: v.$gap;
+  @extend %container;
+  @extend %section-padding;
+
+  @include media('>=#{v.$mobile-menu-breakpoint}') {
+    grid-template-columns: 2fr 1fr;
+    grid-template-rows: repeat(3, 1fr);
+    justify-items: start;
+    align-items: start;
+  }
+
+  &__title {
+    @extend %h3;
+    order: 1;
+  }
+
+  &__img {
+    justify-self: center;
+    width: 100%;
+    max-width: 32rem;
+    height: auto;
+    order: 3;
+
+    @include media('>=#{v.$mobile-menu-breakpoint}') {
+      grid-column: 1 / 2;
+      grid-row: 2 / span 2;
+      margin-left: 11rem;
+    }
+  }
+
+  &__form {
+    justify-self: center;
+    order: 2;
+
+    @include media('>=#{v.$mobile-menu-breakpoint}') {
+      grid-column: 2 / 3;
+      grid-row: 1 / span 3;
+    }
+  }
+}

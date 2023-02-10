@@ -1,0 +1,17 @@
+@use '../../scss/placeholders';
+@use '../../scss/variables' as v;
+@use '../../scss/include-media' as *;
+
+.error {
+  @extend %column;
+  @extend %section-padding;
+
+  @include media('>=#{v.$mobile-menu-breakpoint}') {
+    align-items: center;
+    margin: auto;
+  }
+
+  &__desc {
+    margin-top: v.$margin;
+  }
+}

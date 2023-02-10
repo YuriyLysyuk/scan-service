@@ -1,0 +1,99 @@
+@use '../../scss/placeholders';
+@use '../../scss/typography';
+@use '../../scss/variables' as v;
+@use '../../scss/include-media' as *;
+
+.hero {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: v.$gap;
+  @extend %container;
+  @extend %section-padding;
+
+  @include media('>=#{v.$mobile-menu-breakpoint}') {
+    grid-template-columns: 1fr 1fr;
+    justify-items: start;
+    align-items: start;
+    padding-bottom: 0;
+  }
+
+  &__title {
+    max-width: 52rem;
+    @extend %h3;
+    letter-spacing: 0.04em;
+
+    @include media('>=#{v.$mobile-menu-breakpoint}') {
+      grid-column: 1 / 2;
+    }
+  }
+
+  &__desc {
+    margin-top: 1.9rem;
+
+    @include media('>=#{v.$mobile-menu-breakpoint}') {
+      grid-column: 1 / 2;
+      margin-top: 3.6rem;
+    }
+  }
+
+  &__btn {
+    margin-top: 3rem;
+
+    @include media('>=#{v.$mobile-menu-breakpoint}') {
+      margin-top: 7rem;
+    }
+  }
+
+
+  &__img {
+    justify-self: center;
+    width: 100%;
+    max-width: 55rem;
+    height: auto;
+
+    @include media('>=#{v.$mobile-menu-breakpoint}') {
+      grid-column: 2/ 3;
+      justify-self: end;
+    }
+  }
+}
+
+.histograms {
+  @extend %container;
+  @extend %section-padding;
+
+  @include media('>=#{v.$mobile-menu-breakpoint}') {
+    padding-top: 0;
+  }
+
+  &__title {
+    margin-bottom: 1rem;
+    font-family: v.$header-font;
+    font-weight: v.$header-font-weight;
+    font-size: 3rem;
+    line-height: 3.6rem;
+    letter-spacing: 0.02em;
+
+    @include media('>=#{v.$mobile-menu-breakpoint}') {
+      margin-bottom: 1.7rem;
+    }
+  }
+}
+
+.documents {
+  @extend %container;
+  @extend %section-padding;
+
+  &__title {
+    margin-bottom: 3.1rem;
+    font-family: v.$header-font;
+    font-weight: v.$header-font-weight;
+    font-size: 3rem;
+    line-height: 3.6rem;
+    letter-spacing: 0.02em;
+
+    @include media('>=#{v.$mobile-menu-breakpoint}') {
+      margin-bottom: 5.5rem;
+    }
+  }
+}

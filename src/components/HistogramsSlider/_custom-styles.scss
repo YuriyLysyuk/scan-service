@@ -1,0 +1,51 @@
+@use '../../scss/variables' as v;
+@use '../../scss/placeholders';
+@use '../../scss/include-media' as *;
+
+.histograms-slider {
+  .slick-list {
+    margin-left: 1.5rem;
+    margin-right: 1.5rem;
+    background: v.$light;
+    border: 0.2rem solid v.$accent-2;
+    border-radius: 0 0 1rem 1rem;
+
+    @include media('>=xs') {
+      margin-left: 16.5rem;
+      margin-right: 3.5rem;
+      border-radius: 0 1rem 1rem 0;
+    }
+  }
+
+  .slick-prev,
+  .slick-next {
+    width: 2.6rem;
+    height: auto;
+    opacity: 0.4;
+    @extend %transition;
+
+    &:hover {
+      opacity: 1;
+    }
+
+    &:before {
+      content: '';
+    }
+  }
+
+  .slick-prev {
+    left: -1rem;
+
+    @include media('>=xs') {
+      left: 0;
+    }
+  }
+
+  .slick-next {
+    right: -1rem;
+
+    @include media('>=xs') {
+      right: 0;
+    }
+  }
+}

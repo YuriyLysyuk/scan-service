@@ -1,0 +1,15 @@
+@use '../../scss/include-media' as *;
+@use '../../scss/variables' as v;
+
+.founded {
+  color: #949494;
+  margin-bottom: 3.4rem;
+
+  @include media('>=#{v.$mobile-menu-breakpoint}') {
+    margin-bottom: 2.7rem;
+  }
+}
+
+.spinner {
+  display: inline-flex;
+}

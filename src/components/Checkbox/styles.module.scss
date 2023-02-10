@@ -1,0 +1,48 @@
+@use '../../scss/forms';
+@use '../../scss/variables' as v;
+@use '../../scss/include-media' as *;
+
+.group {
+  display: none;
+  margin-bottom: 1.5rem;
+
+  @include media('>=xs') {
+    display: block;
+  }
+}
+
+.input {
+  display: none;
+}
+
+.label {
+  display: flex;
+  align-items: center;
+  font-weight: 400;
+  font-size: 1.8rem;
+  line-height: 2.2rem;
+  letter-spacing: 0.03rem;
+  color: v.$dark;
+  cursor: pointer;
+  opacity: 0.4;
+
+  .input:checked + & {
+    opacity: 1;
+  }
+
+  &:before {
+    content: '';
+    flex: 0 0 2rem;
+    width: 2rem;
+    height: 2rem;
+    margin-right: 1.7rem;
+    border: 0.1rem solid v.$dark;
+
+    input:checked + & {
+      background-image: url('../../assets/images/check.png');
+      background-repeat: no-repeat;
+      background-position: center;
+      background-size: 1.4rem;
+    }
+  }
+}

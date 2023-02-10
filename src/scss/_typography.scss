@@ -24,15 +24,18 @@ body {
 
 h1,
 h2,
-.h2 {
+.h2,
+h3,
+%h3 {
   font-family: v.$header-font;
   font-weight: v.$header-font-weight;
-  font-size: 2.8rem;
-  line-height: 3.4rem;
 }
 
 h1 {
-  @include media('>=md') {
+  font-size: 2.8rem;
+  line-height: 3.4rem;
+
+  @include media('>=#{v.$mobile-menu-breakpoint}') {
     font-size: 6rem;
     line-height: 7.2rem;
   }
@@ -40,29 +43,39 @@ h1 {
 
 h2,
 .h2 {
-  @include media('>=md') {
+  font-size: 2.8rem;
+  line-height: 3.4rem;
+
+  @include media('>=#{v.$mobile-menu-breakpoint}') {
     font-size: 4.5rem;
     line-height: 5.4rem;
   }
 }
 
 h3,
+%h3 {
+  font-size: 2rem;
+  line-height: 2.4rem;
+
+  @include media('>=xxs') {
+    font-size: 2.2rem;
+    line-height: 2.6rem;
+  }
+
+  @include media('>=#{v.$mobile-menu-breakpoint}') {
+    font-size: 4rem;
+    line-height: 4.8rem;
+  }
+}
+
 h4 {
   font-family: v.$body-font;
-  letter-spacing: 0.02em;
   font-weight: 500;
-}
-
-h3 {
-  font-size: 3rem;
-  line-height: 3.6rem;
-}
-
-h4 {
   font-size: 1.9rem;
   line-height: 2.3rem;
+  letter-spacing: 0.02em;
 
-  @include media('>=md') {
+  @include media('>=#{v.$mobile-menu-breakpoint}') {
     font-size: 2.6rem;
     line-height: 3.1rem;
   }
@@ -71,6 +84,8 @@ h4 {
 h1,
 h2,
 .h2,
+h3,
+%h3,
 p,
 span,
 li,
@@ -88,7 +103,7 @@ textarea {
 }
 
 a {
-  color: v.$text-color;
+  color: v.$link-color;
   text-decoration: none;
 
   @extend %transition;

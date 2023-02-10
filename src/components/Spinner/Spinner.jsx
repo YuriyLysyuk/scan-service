@@ -3,12 +3,12 @@ import classNames from 'classnames';
 
 import styles from './styles.module.scss';
 
-import Icon from '../../components/Icon/Icon';
+import { ReactComponent as SpinnerSVG } from '../../assets/images/spinner.svg';
 
 const Spinner = ({ extClass }) => {
   const spinnerClass = classNames(styles.spinner, extClass);
 
-  return <Icon className={spinnerClass} name="spinner" />;
+  return <SpinnerSVG className={spinnerClass} />;
 };
 
 export default Spinner;

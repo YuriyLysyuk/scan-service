@@ -3,20 +3,52 @@ import classNames from 'classnames/bind';
 
 import styles from './styles.module.scss';
 
+import Spinner from '../Spinner/Spinner';
+
 const cx = classNames.bind(styles);
 
-const Button = ({ color, size, disabled, href, extClass, children }) => {
-  const btnClass = cx({
+const openInNewTab = (url) => {
+  window.open(url, '_blank', 'noreferrer');
+};
+
+const Button = ({
+  color,
+  size,
+  disabled,
+  isLoading,
+  href,
+  type,
+  className,
+  children,
+  onClick,
+  newWindow,
+}) => {
+  const buttonClass = cx({
     btn: true,
     [`${color}`]: color,
     [`${size}`]: size,
-    [`${extClass}`]: extClass,
+    [`${className}`]: className,
   });
 
   const ButtonTag = Boolean(href) ? 'a' : 'button';
+  const buttonType = Boolean(type) ? { type } : {};
+
+  const handleOnBlankClick = (e) => {
+    e.preventDefault();
+
+    openInNewTab(href);
+  };
 
   return (
-    <ButtonTag className={btnClass} href={href} disabled={disabled}>
+    <ButtonTag
+      className={buttonClass}
+      href={href}
+      disabled={disabled}
+      {...buttonType}
+      onClick={newWindow ? handleOnBlankClick : onClick}
+    >
+      {isLoading && <Spinner extClass={styles.spinner} />}
+
       {children}
     </ButtonTag>
   );

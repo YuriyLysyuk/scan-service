@@ -3,7 +3,6 @@ import nextArrowSrc from '../../assets/images/nextArrow.svg';
 import stopwatchSrc from '../../assets/images/stopwatch.svg';
 import magnifierSrc from '../../assets/images/magnifier.svg';
 import shieldSrc from '../../assets/images/shield.svg';
-import spinnerSrc from '../../assets/images/spinner.svg';
 
 const defaultIcon = {
   src: 'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAUAAAAFCAYAAACNbyblAAAAHElEQVQI12P4//8/w38GIAXDIBKE0DHxgljNBAAO9TXL0Y4OHwAAAABJRU5ErkJggg==',
@@ -40,12 +39,6 @@ export const getIcon = (icon) => {
       return {
         src: shieldSrc,
         alt: 'Щит',
-      };
-
-    case 'spinner':
-      return {
-        src: spinnerSrc,
-        alt: 'Спиннер',
       };
 
     default:
