@@ -36,6 +36,15 @@
     }
   }
 
+  &__btn {
+    margin-top: 3rem;
+
+    @include media('>=#{v.$mobile-menu-breakpoint}') {
+      margin-top: 7rem;
+    }
+  }
+
+
   &__img {
     justify-self: center;
     width: 100%;
