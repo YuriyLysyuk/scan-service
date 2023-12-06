@@ -55,14 +55,14 @@ const LoginForm = ({ className }) => {
         <Form className={formClass}>
           <TextField
             className={styles.textInputGroup}
-            label="Логин: (sf_student5)"
+            label="Логин:"
             id="login"
             name="login"
           />
 
           <TextField
             className={styles.textInputGroup}
-            label="Пароль: (F9sqm@Kq38)"
+            label="Пароль:"
             id="password"
             name="password"
             type="password"
@@ -72,7 +72,7 @@ const LoginForm = ({ className }) => {
             className={styles.submit}
             type="submit"
             color="primary"
-            disabled={!dirty || !isValid || isSubmitting}
+            disabled={!isValid || isSubmitting}
           >
             Войти
           </Button>
